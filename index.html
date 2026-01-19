@@ -185,10 +185,10 @@
     .project-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); margin-top: 0;}
     .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
 
-    /* --- SKILLS GRID (New Rectangular Format) --- */
+    /* --- SKILLS GRID (Rectangular) --- */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Creates equal boxes */
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 20px;
     }
     
@@ -214,19 +214,8 @@
       box-shadow: var(--shadow-hover);
     }
     
-    /* Icon styling within the skill card */
-    .skill-card svg {
-      color: var(--primary);
-      width: 40px;
-      height: 40px;
-    }
-    
-    .skill-name {
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--text-main);
-      margin: 0;
-    }
+    .skill-card svg { color: var(--primary); width: 40px; height: 40px; }
+    .skill-name { font-weight: 700; font-size: 15px; color: var(--text-main); margin: 0; }
 
     /* --- CONTACT --- */
     .contact-container {
@@ -264,7 +253,7 @@
       .company-logo { width: 60px; height: 60px; }
       .nav-actions { margin-left: auto; }
       .nav-actions .icon-btn { display: none; }
-      .skills-grid { grid-template-columns: 1fr 1fr; } /* 2 cols on mobile */
+      .skills-grid { grid-template-columns: 1fr 1fr; } 
     }
   </style>
 </head>
@@ -440,6 +429,14 @@
       <div class="skill-card">
         <i data-feather="compass"></i>
         <h3 class="skill-name">Strategy</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="users"></i>
+        <h3 class="skill-name">Stakeholders Communication</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="check-square"></i>
+        <h3 class="skill-name">Project Execution</h3>
       </div>
     </div>
   </section>
