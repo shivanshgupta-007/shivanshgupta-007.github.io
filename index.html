@@ -4,104 +4,412 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shivansh Gupta | Portfolio</title>
-  <meta name="description" content="Shivansh Gupta — AI for Business @ USC. Consulting-oriented analytics & automation." />
+  <meta name="description" content="Shivansh Gupta — AI for Business @ USC. Experience, leadership, skills, and projects." />
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #111; background: #fff; }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px; }
-    nav { display: flex; gap: 16px; align-items: center; justify-content: space-between; position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; padding: 12px 20px; }
-    nav a { text-decoration: none; color: #111; font-weight: 600; }
-    .links { display: flex; gap: 14px; flex-wrap: wrap; }
-    h1 { font-size: 44px; line-height: 1.05; margin: 18px 0 10px; }
-    p { font-size: 18px; line-height: 1.6; margin: 0 0 16px; color: #222; }
-    .muted { color: #555; }
-    .cta { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 1px solid #ddd; }
-    .btn.primary { background: #FF9933; border-color: #FF9933; color: #111; }
-    section { padding: 52px 0; border-bottom: 1px solid #f1f1f1; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .card { grid-column: span 6; border: 1px solid #eee; border-radius: 16px; padding: 16px; }
-    .card h3 { margin: 0 0 8px; }
-    .tag { display: inline-block; font-size: 12px; padding: 4px 8px; border-radius: 999px; background: #f6f6f6; border: 1px solid #eee; margin-right: 6px; margin-top: 8px; }
-    footer { padding: 28px 0; }
-    @media (max-width: 780px) { h1 { font-size: 34px; } .card { grid-column: span 12; } nav { position: static; } }
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1621;
+      --text:#e9eef6;
+      --muted:#a8b3c3;
+      --line:rgba(255,255,255,.10);
+      --chip:rgba(255,255,255,.06);
+      --shadow: 0 12px 34px rgba(0,0,0,.40);
+      --radius:18px;
+      --max: 1100px;
+
+      /* AyurMeals-inspired accents (used sparingly) */
+      --accent:#ff9933; /* saffron */
+      --accent2:#8db600; /* green */
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 560px at 10% -10%, rgba(255,153,51,.22), transparent 55%),
+        radial-gradient(900px 520px at 92% 10%, rgba(141,182,0,.12), transparent 60%),
+        var(--bg);
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    /* Top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .dot{
+      width:10px; height:10px; border-radius:999px; background:var(--accent);
+      box-shadow:0 0 0 4px rgba(255,153,51,.18);
+    }
+    .nav-links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+    .nav-links a{
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    .nav-links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:9px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      font-weight:800;
+      font-size:13px;
+      color:var(--text);
+      background: rgba(255,255,255,.04);
+    }
+    .btn:hover{border-color:rgba(255,255,255,.22)}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(255,153,51,.95), rgba(255,153,51,.72));
+      color:#101418;
+      border-color: transparent;
+    }
+
+    /* Hero */
+    .hero{padding:44px 0 18px}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+    h1{
+      margin:16px 0 10px;
+      font-size:46px;
+      line-height:1.05;
+      letter-spacing:-.9px;
+    }
+    .sub{
+      max-width:820px;
+      font-size:16.5px;
+      line-height:1.75;
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 0}
+
+    /* Sections */
+    section{padding:36px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin-bottom:14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+    }
+    .card{
+      grid-column: span 12;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Experience / Leadership cards */
+    .role{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .role h3{margin:0; font-size:15.5px}
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:4px;
+      line-height:1.5;
+    }
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: var(--chip);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      font-weight:800;
+    }
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:7px 0; color:var(--muted); line-height:1.65; font-size:13.6px}
+
+    /* Skills + Projects layout */
+    .cols-2 .card{grid-column: span 6}
+    .cols-3 .card{grid-column: span 4}
+
+    footer{
+      padding:26px 0 34px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:24px;
+      font-size:13px;
+    }
+
+    @media (max-width: 900px){
+      h1{font-size:38px}
+      .cols-2 .card, .cols-3 .card{grid-column: span 12}
+    }
   </style>
 </head>
+
 <body>
-  <nav>
-    <a href="#home">Shivansh</a>
-    <div class="links">
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-      <!-- Update this once you upload a resume.pdf into /assets -->
-      <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <a href="#about">Shivansh Gupta</a>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership &amp; Impact</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a class="btn" href="mailto:shivansh@usc.edu">Email</a>
+        <a class="btn" href="tel:+12137964587">Call</a>
+        <a class="btn" href="https://linkedin.com/in/-shivanshgupta" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- Upload your resume as /assets/resume.pdf -->
+        <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
     </div>
-  </nav>
+  </div>
 
-  <main class="wrap">
-    <section id="home">
-      <p class="muted">AI for Business @ USC • Consulting-oriented analytics & automation</p>
-      <h1>Shivansh Gupta</h1>
-      <p>I build reliable data workflows and automation that reduce manual work, improve accuracy, and support better decisions.</p>
-      <div class="cta">
-        <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-        <a class="btn" href="#projects">View Projects</a>
-        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+  <div class="container">
+    <!-- ABOUT ME -->
+    <section id="about" class="hero">
+      <span class="pill">AI for Business @ USC • Consulting-focused execution</span>
+      <h1>About Me</h1>
+      <p class="sub">
+        I’m Shivansh Gupta — an undergraduate at the University of Southern California pursuing a Bachelor of Science in
+        Artificial Intelligence for Business (Marshall School of Business &amp; Viterbi School of Engineering). I’m interested
+        in analytics, automation, and building reliable workflows that improve decision-making and execution across stakeholders.
+      </p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#experience">Go to Experience</a>
+        <a class="btn" href="#projects">Go to Projects</a>
       </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p class="muted">Mini case studies (Problem → Approach → Impact).</p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Financial Data Validation & Automation</h3>
-          <p>Automated statement extraction and reconciliation into Excel to support independent verification and reduce manual effort.</p>
-          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Excel</span>
-        </div>
-
-        <div class="card">
-          <h3>AyurMeals — Operating Model & Growth</h3>
-          <p>Built a diagnostic-driven personalization workflow and executed partnerships across schools, corporates, and public-sector programs.</p>
-          <span class="tag">Strategy</span><span class="tag">Ops</span><span class="tag">GTM</span>
-        </div>
-      </div>
-    </section>
-
+    <!-- EXPERIENCE (EXACT FROM RESUME) -->
     <section id="experience">
-      <h2>Experience</h2>
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>Copied exactly from EY-submitted resume.</p>
+      </div>
+
       <div class="grid">
         <div class="card">
-          <h3>NexEdge Capital — Data Automation / Analytics</h3>
-          <p class="muted">Python, SQL, Bloomberg data, Excel automation</p>
-          <p>Built workflows to validate and reconcile financial statements and improve repeatability of reporting.</p>
+          <div class="role">
+            <div>
+              <h3>Nexedge Capital</h3>
+              <div class="meta">Delhi, India<br><b>Business Analyst Intern</b> — December 2025 – January 2026</div>
+            </div>
+          </div>
+          <ul>
+            <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving 2,500+ hours per quarter in overall manual efforts.</li>
+            <li>Designed a SQL-based workflow to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
+          </ul>
         </div>
+
         <div class="card">
-          <h3>Founder — AyurMeals</h3>
-          <p class="muted">Partnerships, execution, operations</p>
-          <p>Executed multi-stakeholder partnerships and built scalable processes for personalized plans.</p>
+          <div class="role">
+            <div>
+              <h3>AyurMeals</h3>
+              <div class="meta">Delhi, India<br><b>Founder</b> — June 2023 – June 2025</div>
+            </div>
+          </div>
+          <ul>
+            <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
+            <li>Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in Times of India (Nov ’24) for modernizing wisdom of Ayurveda.</li>
+            <li>Launched AyurMeals' inspired dish in 10 govt. schools in partnership with Akshay Patra, the largest midday meal provider in India. Endorsed by the Govt. of India for impacting public health and refining preventive healthcare.</li>
+            <li>Shortlisted among 600 students from school for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge, for exceptional analytical skills and in-depth knowledge of the business.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>The United Coffee House</h3>
+              <div class="meta">Delhi, India<br><b>Growth Intern</b> — March 2024</div>
+            </div>
+          </div>
+          <ul>
+            <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by 30% in Chandigarh.</li>
+            <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork &amp; customer experience.</li>
+            <li>Ideated and scripted 10+ reels, leading to a 20% increase in customer engagement on social media platforms.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Mr. Moustaches Cakes</h3>
+              <div class="meta">Gurugram, India<br><b>Sales and Marketing Intern</b> — June 2023 - July 2023</div>
+            </div>
+          </div>
+          <ul>
+            <li>Expanded corporate client sales by 15% by acquiring new accounts through outreach and referral-based leads.</li>
+            <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery &amp; retaining key clients.</li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <!-- LEADERSHIP & IMPACT (EXACT FROM RESUME) -->
+    <section id="leadership">
+      <div class="section-head">
+        <h2>Leadership &amp; Impact</h2>
+        <p>Copied exactly from EY-submitted resume.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>USC Marshall Artificial Intelligence Association (MAIA)</h3>
+              <div class="meta">Los Angelees, CA<br><b>Project Member, Entertainment Department</b> — September 2025 - Present</div>
+            </div>
+            <div class="tags">
+              <span class="tag">FastAPI</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Redis</span>
+            </div>
+          </div>
+          <ul>
+            <li>Collaborating to develop a backend system for a music-intelligence platform using FastAPI, Supabase, Redis.</li>
+            <li>Developing a task-based recommender using Apple Music previews, Librosa analysis, and similarity modeling.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>USC Cloud</h3>
+              <div class="meta">Los Angeles, CA<br><b>Member</b> — September 2025 - Present</div>
+            </div>
+            <div class="tags">
+              <span class="tag">Strategy</span>
+              <span class="tag">Growth</span>
+              <span class="tag">Partnerships</span>
+            </div>
+          </div>
+          <ul>
+            <li>Pitched NFC chips &amp; court experiences to the Crypto.com Arena VIP Tour team to raise revenue per guest by 50%.</li>
+            <li>Proposed influencer tours, hero reels, and travel-platform partnerships to the Tour team, expected to 5x revenue.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS (EXACT FROM RESUME) -->
     <section id="skills">
-      <h2>Skills</h2>
-      <p><strong>Technical:</strong> Python, SQL, Excel automation, APIs</p>
-      <p><strong>Consulting:</strong> Structured problem solving, stakeholder communication, data-driven decision making</p>
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>Copied exactly from EY-submitted resume.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Skills</h3>
+              <div class="meta">From “SKILLS &amp; CERTIFICATIONS”</div>
+            </div>
+          </div>
+          <p style="margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:13.6px;">
+            Skills: Excel, SQL, Python, Prompt Engineering, Data Analysis, Project Management, Business Intelligence, Strategy
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Interests</h3>
+              <div class="meta">From “SKILLS &amp; CERTIFICATIONS”</div>
+            </div>
+          </div>
+          <p style="margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:13.6px;">
+            Interests: Table tennis, Pickleball, Nature Photography, Gym, Hiking, Spirituality, Yoga, Dance
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/yourhandle</a></p>
+    <!-- PROJECTS (EXACT FROM RESUME) -->
+    <section id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Copied exactly from EY-submitted resume.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Research Paper on Food Choices in Delhi NCR Workforce</h3>
+              <div class="meta">March 2024 – December 2024</div>
+            </div>
+          </div>
+          <ul>
+            <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <footer class="muted">
-      © <span id="y"></span> Shivansh Gupta
+    <footer>
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <span>© <span id="y"></span> Shivansh Gupta</span>
+        <span>
+          <a href="mailto:shivansh@usc.edu" style="text-decoration:underline;">shivansh@usc.edu</a>
+          <span style="opacity:.6"> · </span>
+          <a href="https://linkedin.com/in/-shivanshgupta" target="_blank" rel="noopener" style="text-decoration:underline;">LinkedIn</a>
+          <span style="opacity:.6"> · </span>
+          <a href="assets/resume.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">Resume</a>
+        </span>
+      </div>
     </footer>
-  </main>
+  </div>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
