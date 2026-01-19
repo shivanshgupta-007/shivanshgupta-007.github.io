@@ -22,7 +22,6 @@
       --radius:18px;
       --max: 1100px;
 
-      /* AyurMeals-inspired accents (used sparingly) */
       --accent:#ff9933; /* saffron */
       --accent2:#8db600; /* green */
     }
@@ -40,7 +39,7 @@
     }
 
     a{color:inherit; text-decoration:none}
-    /* More left-aligned than centered */
+    /* left-leaning layout */
     .container{max-width:var(--max); margin:0; padding:0 22px}
 
     /* Top nav */
@@ -102,16 +101,17 @@
       justify-content:center;
       padding:10px 16px;
       border-radius:14px;
-      border:1px solid rgba(255,153,51,.6);
+      border:1px solid rgba(255,153,51,.65);
       background: rgba(255,153,51,.12);
       color: var(--text);
       font-weight:800;
       font-size:13px;
       cursor:pointer;
+      white-space:nowrap;
     }
     .connect-btn:hover{
       background: rgba(255,153,51,.18);
-      border-color: rgba(255,153,51,.9);
+      border-color: rgba(255,153,51,.95);
     }
 
     /* Hero */
@@ -211,72 +211,127 @@
       .cols-2 .card{grid-column: span 12}
     }
 
-    /* Contact section (scroll target, not modal) */
-    .connect-page{
-      background:#f9dfe3;
-      border: 1px solid rgba(120,0,0,.18);
-      border-radius: 26px;
-      padding: 36px 34px;
-      box-shadow: 0 25px 80px rgba(0,0,0,.20);
-      color:#111;
+    /* --- Let's Connect (your style, not the pink screenshot) --- */
+    .connect-wrap{
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(255,153,51,.18), transparent 55%),
+        radial-gradient(800px 450px at 95% 0%, rgba(141,182,0,.10), transparent 60%),
+        rgba(255,255,255,.03);
+      box-shadow: 0 25px 80px rgba(0,0,0,.25);
+      padding: 26px;
     }
 
-    .connect-title{
-      margin:0 0 18px;
-      font-size: 56px;
-      letter-spacing: -1px;
-      color:#b15a66;
+    .connect-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
     }
+
+    .connect-top h3{
+      margin:0;
+      font-size: 34px;
+      letter-spacing:-.6px;
+    }
+    .connect-top p{
+      margin:8px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 720px;
+      font-size: 14px;
+    }
+
+    .connect-badges{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top: 2px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .badge svg{width:16px; height:16px; fill: var(--muted);}
 
     .connect-grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:18px;
+      gap:14px;
       margin-top: 10px;
     }
 
-    .cfield{display:flex; flex-direction:column; gap:10px;}
-    .cfield.full, .full{grid-column: 1 / -1;}
+    .field{display:flex; flex-direction:column; gap:8px;}
+    .field.full{grid-column: 1 / -1;}
 
-    .cfield span{
+    .field span{
       font-weight: 700;
-      color: #7b1c26;
-      letter-spacing: .2px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing:.3px;
+      text-transform: uppercase;
     }
 
-    .cfield input, .cfield textarea{
+    .field input, .field textarea{
       width:100%;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.70);
-      background: rgba(255,255,255,.35);
-      padding: 18px 18px;
-      font-size: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      padding: 14px 14px;
+      font-size: 15px;
       outline:none;
-      color:#5b121a;
+      color: var(--text);
+    }
+    .field textarea{
+      min-height: 180px;
+      resize: vertical;
+    }
+    .field input:focus, .field textarea:focus{
+      border-color: rgba(255,153,51,.55);
+      box-shadow: 0 0 0 4px rgba(255,153,51,.12);
     }
 
-    .cfield textarea{
-      border-radius: 26px;
-      resize: vertical;
-      min-height: 260px;
+    .send-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top: 14px;
     }
 
     .send-btn{
-      padding: 16px 28px;
-      border-radius: 0px;
-      border: 1px solid rgba(255,255,255,.95);
-      background: rgba(255,255,255,.95);
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,153,51,.65);
+      background: linear-gradient(180deg, rgba(255,153,51,.95), rgba(255,153,51,.70));
       font-weight: 900;
-      font-size: 22px;
+      font-size: 14px;
       cursor:pointer;
       color:#111;
     }
-    .send-btn:hover{ background: rgba(255,255,255,1); }
+    .send-btn:hover{ filter: brightness(1.03); }
+
+    .privacy{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
 
     @media (max-width: 860px){
-      .connect-title{font-size: 42px;}
       .connect-grid{grid-template-columns: 1fr;}
-      .cfield textarea{min-height: 220px;}
     }
   </style>
 </head>
@@ -320,7 +375,7 @@
   </div>
 
   <div class="container">
-    <!-- ABOUT ME (kept as section, removed header links and removed go-to buttons) -->
+    <!-- ABOUT ME (kept as section, no go-to buttons) -->
     <section id="about" class="hero">
       <span class="pill">AI for Business @ USC • Consulting-focused execution</span>
       <h1>About Me</h1>
@@ -494,45 +549,74 @@
       </div>
     </section>
 
-    <!-- LET'S CONNECT (bottom of page, scroll target) -->
+    <!-- LET'S CONNECT (secure submission via Formspree) -->
     <section id="connect">
       <div class="section-head">
         <h2>Let’s Connect</h2>
       </div>
 
-      <div class="connect-page">
-        <h3 class="connect-title">Get In Touch</h3>
+      <div class="connect-wrap">
+        <div class="connect-top">
+          <div>
+            <h3>Get in touch</h3>
+            <p>
+              If you’d like to connect about consulting, analytics/automation work, or student org collaborations,
+              send a quick note here. I read every message.
+            </p>
+          </div>
 
-        <!-- Mailto form (static site friendly) -->
-        <form class="connect-form" action="mailto:shivansh@usc.edu" method="post" enctype="text/plain">
+          <div class="connect-badges">
+            <span class="badge" title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 4.2-8 5-8-5V8l8 5 8-5v2.2z"/></svg>
+              shivansh@usc.edu
+            </span>
+            <a class="badge" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H7.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- IMPORTANT: replace YOUR_FORMSPREE_ID with your Formspree form ID -->
+        <form
+          action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+          method="POST"
+        >
           <div class="connect-grid">
-            <label class="cfield">
+            <label class="field">
               <span>First Name</span>
-              <input type="text" name="First Name">
+              <input type="text" name="firstName" autocomplete="given-name">
             </label>
 
-            <label class="cfield">
+            <label class="field">
               <span>Last Name</span>
-              <input type="text" name="Last Name">
+              <input type="text" name="lastName" autocomplete="family-name">
             </label>
 
-            <label class="cfield">
-              <span>Email Address</span>
-              <input type="email" name="Email" required>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" required autocomplete="email">
             </label>
 
-            <label class="cfield">
-              <span>Phone No.</span>
-              <input type="tel" name="Phone">
+            <label class="field">
+              <span>Phone (optional)</span>
+              <input type="tel" name="phone" autocomplete="tel">
             </label>
 
-            <label class="cfield full">
+            <label class="field full">
               <span>Message</span>
-              <textarea name="Message" rows="10" required></textarea>
+              <textarea name="message" required></textarea>
             </label>
 
-            <div class="full">
+            <!-- Formspree helpers -->
+            <input type="hidden" name="_subject" value="New message from portfolio site">
+            <input type="text" name="_gotcha" style="display:none">
+
+            <div class="send-row full">
               <button class="send-btn" type="submit">Send</button>
+              <div class="privacy">
+                This form submits securely over HTTPS.
+              </div>
             </div>
           </div>
         </form>
@@ -545,14 +629,13 @@
         <span>
           <a href="mailto:shivansh@usc.edu" style="text-decoration:underline;">shivansh@usc.edu</a>
           <span style="opacity:.6"> · </span>
-          <a href="https://linkedin.com/in/-shivanshgupta" target="_blank" rel="noopener" style="text-decoration:underline;">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" style="text-decoration:underline;">LinkedIn</a>
         </span>
       </div>
     </footer>
   </div>
 
   <script>
-    // Only year script (no nested <script> bug)
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
