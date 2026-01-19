@@ -86,6 +86,145 @@
       border-color: transparent;
     }
 
+    /* --- Header icon cluster + Connect button --- */
+    .nav-cta{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-left:10px;
+    }
+    
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .icon-btn:hover{ border-color: rgba(255,255,255,.22); }
+    .icon-btn svg{
+      width:20px;
+      height:20px;
+      fill: var(--muted);
+    }
+    .icon-btn:hover svg{ fill: var(--text); }
+    
+    .connect-btn{
+      padding:10px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,153,51,.6);
+      background: rgba(255,153,51,.12);
+      color: var(--text);
+      font-weight:800;
+      font-size:13px;
+      cursor:pointer;
+    }
+    .connect-btn:hover{
+      background: rgba(255,153,51,.18);
+      border-color: rgba(255,153,51,.9);
+    }
+    
+    /* --- Connect Modal (matches your screenshot vibe) --- */
+    .connect-overlay{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:22px;
+      z-index:999;
+    }
+    .connect-overlay.open{ display:flex; }
+    
+    .connect-modal{
+      width:min(980px, 100%);
+      background: #f9dfe3;               /* soft pink like screenshot */
+      border-radius: 26px;
+      padding: 36px 34px;
+      position:relative;
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+      border: 1px solid rgba(120,0,0,.18);
+    }
+    
+    .connect-modal h2{
+      margin:0 0 18px;
+      font-size: 56px;
+      letter-spacing: -1px;
+      color: #b15a66;                    /* muted rose heading */
+    }
+    
+    .connect-close{
+      position:absolute;
+      top:16px;
+      right:18px;
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border: 1px solid rgba(120,0,0,.22);
+      background: rgba(255,255,255,.35);
+      cursor:pointer;
+      font-size: 26px;
+      line-height: 1;
+      color:#7b1c26;
+    }
+    .connect-close:hover{ background: rgba(255,255,255,.5); }
+    
+    .form-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px 18px;
+      margin-top: 10px;
+    }
+    
+    .field{ display:flex; flex-direction:column; gap:10px; }
+    .field-full{ grid-column: 1 / -1; }
+    
+    .field span{
+      font-weight: 700;
+      color: #7b1c26;                    /* deep maroon label text */
+      letter-spacing: .2px;
+    }
+    
+    .field input, .field textarea{
+      width:100%;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.55);
+      background: rgba(255,255,255,.22);
+      padding: 18px 18px;
+      font-size: 18px;
+      outline:none;
+      color:#5b121a;
+    }
+    .field textarea{ border-radius: 26px; resize: vertical; min-height: 260px; }
+    
+    .field input:focus, .field textarea:focus{
+      border-color: rgba(123,28,38,.35);
+      box-shadow: 0 0 0 4px rgba(255,255,255,.25);
+    }
+    
+    .send-btn{
+      padding: 16px 28px;
+      border-radius: 0px;               /* screenshot looks boxy */
+      border: 1px solid rgba(255,255,255,.85);
+      background: rgba(255,255,255,.85);
+      font-weight: 900;
+      font-size: 22px;
+      cursor:pointer;
+      color:#111;
+    }
+    .send-btn:hover{ background: rgba(255,255,255,.95); }
+    
+    @media (max-width: 860px){
+      .connect-modal h2{ font-size: 42px; }
+      .form-grid{ grid-template-columns: 1fr; }
+      .field textarea{ min-height: 220px; }
+    }
+
+
     /* Hero */
     .hero{padding:44px 0 18px}
     .pill{
@@ -193,26 +332,34 @@
 </head>
 
 <body>
-  <div class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <span class="dot"></span>
-        <a href="#about">Shivansh Gupta</a>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About Me</a>
-        <a href="#experience">Experience</a>
-        <a href="#leadership">Leadership &amp; Impact</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a class="btn" href="mailto:shivansh@usc.edu">Email</a>
-        <a class="btn" href="tel:+12137964587">Call</a>
-        <a class="btn" href="https://linkedin.com/in/-shivanshgupta" target="_blank" rel="noopener">LinkedIn</a>
-        <!-- Upload your resume as /assets/resume.pdf -->
-        <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-      </div>
-    </div>
+  <div class="nav-links">
+  <a href="#about">About Me</a>
+  <a href="#experience">Experience</a>
+  <a href="#leadership">Leadership &amp; Impact</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+
+  <div class="nav-cta">
+    <!-- Icon buttons -->
+    <a class="icon-btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <!-- LinkedIn icon (SVG) -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H7.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+      </svg>
+    </a>
+
+    <a class="icon-btn" href="mailto:shivansh@usc.edu" aria-label="Gmail">
+      <!-- Gmail icon (SVG) -->
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 6H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 4.2-8 5-8-5V8l8 5 8-5v2.2z"/>
+      </svg>
+    </a>
+
+    <!-- Let's Connect button -->
+    <button class="connect-btn" type="button" id="openConnect">Let&#39;s Connect</button>
   </div>
+</div>
+
 
   <div class="container">
     <!-- ABOUT ME -->
@@ -409,6 +556,94 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    <script>
+  // Existing year code (keep)
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Connect modal logic
+  const openBtn = document.getElementById('openConnect');
+  const overlay = document.getElementById('connectOverlay');
+  const closeBtn = document.getElementById('closeConnect');
+  const form = document.getElementById('connectForm');
+
+  function openModal(){
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+  }
+  function closeModal(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+
+  openBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+  overlay?.addEventListener('click', (e) => {
+    if(e.target === overlay) closeModal();
+  });
+
+  // "Send" uses mailto (no backend needed)
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const first = (data.get('firstName') || '').toString().trim();
+    const last  = (data.get('lastName') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    const phone = (data.get('phone') || '').toString().trim();
+    const msg   = (data.get('message') || '').toString().trim();
+
+    const subject = encodeURIComponent(`Website message from ${first} ${last}`.trim());
+    const body = encodeURIComponent(
+      `Name: ${first} ${last}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${msg}`
+    );
+
+    // Put YOUR receiving email here:
+    const to = "shivansh@usc.edu";
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  });
+</script>
+
   </script>
+<!-- CONNECT MODAL -->
+<div class="connect-overlay" id="connectOverlay" aria-hidden="true">
+  <div class="connect-modal" role="dialog" aria-modal="true" aria-labelledby="connectTitle">
+    <button class="connect-close" type="button" id="closeConnect" aria-label="Close">×</button>
+
+    <h2 id="connectTitle">Get In Touch</h2>
+
+    <form id="connectForm">
+      <div class="form-grid">
+        <label class="field">
+          <span>First Name</span>
+          <input type="text" name="firstName" placeholder="" />
+        </label>
+
+        <label class="field">
+          <span>Last Name</span>
+          <input type="text" name="lastName" placeholder="" />
+        </label>
+
+        <label class="field">
+          <span>Email Address</span>
+          <input type="email" name="email" placeholder="" required />
+        </label>
+
+        <label class="field">
+          <span>Phone No.</span>
+          <input type="tel" name="phone" placeholder="" />
+        </label>
+
+        <label class="field field-full">
+          <span>Message</span>
+          <textarea name="message" rows="8" placeholder="" required></textarea>
+        </label>
+
+        <div class="field-full">
+          <button class="send-btn" type="submit">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 </body>
 </html>
