@@ -135,18 +135,15 @@
     }
     .timeline-item:hover .timeline-dot { background: var(--secondary); box-shadow: 0 0 0 6px rgba(141, 182, 0, 0.2); }
 
-    /* CARD CONTENT */
     .timeline-content, .leadership-card {
       background: var(--surface); padding: 30px; border-radius: var(--radius);
       box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
-      /* SIDE BY SIDE LOGO & TEXT */
       display: flex; gap: 25px; align-items: flex-start;
     }
     .timeline-item:hover .timeline-content, .leadership-card:hover {
       transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2);
     }
 
-    /* SHARED LOGO STYLE */
     .company-logo {
       width: 70px; height: 70px; object-fit: contain; border-radius: 12px;
       background: #fff; border: 1px solid #eee; padding: 4px; flex-shrink: 0;
@@ -168,8 +165,6 @@
       padding: 0 4px; border-radius: 4px;
     }
 
-    /* --- LEADERSHIP & PROJECTS (VERTICAL STACK) --- */
-    /* This class makes items stack one below another (Full Width) */
     .vertical-stack { display: flex; flex-direction: column; gap: 30px; }
 
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
@@ -180,28 +175,58 @@
     .tag.tech { background: rgba(141, 182, 0, 0.1); color: var(--secondary); }
     .tag.biz { background: rgba(255, 153, 51, 0.1); color: var(--primary); }
 
-    /* Card styling for clickable projects */
     .project-card {
       background: var(--surface); border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03);
-      width: 100%; /* Force full width */
+      width: 100%;
     }
     .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
     .card-link { text-decoration: none; color: inherit; display: block; height: 100%; padding: 30px; }
-    
     .project-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); margin-top: 0;}
     .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
 
-
-    /* --- SKILLS --- */
-    .skills-wrapper { background: var(--surface); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
-    /* Removed Interests styling since section is gone */
-    .skill-pill-container { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill-pill {
-      border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px;
-      font-weight: 600; font-size: 14px; color: var(--text-main); transition: 0.2s; background: white;
+    /* --- SKILLS GRID (New Rectangular Format) --- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Creates equal boxes */
+      gap: 20px;
     }
-    .skill-pill:hover { border-color: var(--primary); color: var(--primary); background: rgba(255, 153, 51, 0.05); }
+    
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      height: 100%;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    /* Icon styling within the skill card */
+    .skill-card svg {
+      color: var(--primary);
+      width: 40px;
+      height: 40px;
+    }
+    
+    .skill-name {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text-main);
+      margin: 0;
+    }
 
     /* --- CONTACT --- */
     .contact-container {
@@ -239,6 +264,7 @@
       .company-logo { width: 60px; height: 60px; }
       .nav-actions { margin-left: auto; }
       .nav-actions .icon-btn { display: none; }
+      .skills-grid { grid-template-columns: 1fr 1fr; } /* 2 cols on mobile */
     }
   </style>
 </head>
@@ -382,11 +408,38 @@
 
   <section id="skills">
     <h2 class="section-title">Skills</h2>
-    <div class="skills-wrapper">
-      <div class="skill-pill-container">
-        <div class="skill-pill">Excel</div><div class="skill-pill">SQL</div><div class="skill-pill">Python</div>
-        <div class="skill-pill">Prompt Engineering</div><div class="skill-pill">Data Analysis</div>
-        <div class="skill-pill">Project Management</div><div class="skill-pill">Business Intelligence</div><div class="skill-pill">Strategy</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i data-feather="grid"></i>
+        <h3 class="skill-name">Excel</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="database"></i>
+        <h3 class="skill-name">SQL</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="code"></i>
+        <h3 class="skill-name">Python</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="terminal"></i>
+        <h3 class="skill-name">Prompt Engineering</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="bar-chart-2"></i>
+        <h3 class="skill-name">Data Analysis</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="clipboard"></i>
+        <h3 class="skill-name">Project Management</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="pie-chart"></i>
+        <h3 class="skill-name">Business Intelligence</h3>
+      </div>
+      <div class="skill-card">
+        <i data-feather="compass"></i>
+        <h3 class="skill-name">Strategy</h3>
       </div>
     </div>
   </section>
