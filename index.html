@@ -40,7 +40,6 @@
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
-      /* Subtle pattern overlay */
       background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px), radial-gradient(var(--secondary) 0.5px, var(--bg) 0.5px);
       background-size: 24px 24px;
       background-position: 0 0, 12px 12px;
@@ -60,10 +59,10 @@
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      background: rgba(255, 251, 245, 0.92); /* Glassy Cream */
+      background: rgba(255, 251, 245, 0.95);
       backdrop-filter: blur(12px);
       z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
       padding: 12px 0;
     }
     
@@ -81,236 +80,120 @@
       font-size: 20px;
       font-family: 'Poppins', sans-serif;
       color: #111;
-      letter-spacing: -0.5px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      display: flex; align-items: center; gap: 6px;
     }
     .logo span { color: var(--primary); }
 
-    /* Navigation Links (Center) */
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
+    .nav-links { display: flex; gap: 25px; align-items: center; }
+    .nav-links a { font-size: 14px; font-weight: 600; color: var(--text-muted); }
     .nav-links a:hover { color: var(--primary); }
 
-    /* Header Actions (Right) */
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
     .icon-btn {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
+      width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      color: var(--text-muted);
-      background: white;
+      color: var(--text-muted); background: white;
     }
-    .icon-btn:hover {
-      border-color: var(--secondary);
-      color: var(--secondary);
-    }
+    .icon-btn:hover { border-color: var(--secondary); color: var(--secondary); }
     
     .btn-connect {
-      background-color: var(--primary);
-      color: white !important;
-      padding: 8px 18px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 700;
+      background-color: var(--primary); color: white !important; padding: 8px 18px;
+      border-radius: 50px; font-size: 13px; font-weight: 700;
       box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3);
     }
-    .btn-connect:hover {
-      background-color: #e68a2e;
-      transform: translateY(-2px);
-    }
+    .btn-connect:hover { background-color: #e68a2e; transform: translateY(-2px); }
 
-    /* --- HERO SECTION --- */
+    /* --- HERO --- */
     .hero {
-      padding: 160px 24px 80px;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      text-align: center;
+      padding: 160px 24px 80px; max-width: var(--max-width); margin: 0 auto; text-align: center;
     }
-
     .hero-hello {
-      color: var(--secondary);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 14px;
-      margin-bottom: 16px;
-      display: block;
+      color: var(--secondary); font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; font-size: 14px; margin-bottom: 16px; display: block;
     }
-
-    .hero h1 {
-      font-size: 56px;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      letter-spacing: -1px;
-    }
-    
-    .typewriter {
-      color: var(--primary);
-      border-right: 3px solid var(--primary);
-      animation: blink 0.75s step-end infinite;
-    }
+    .hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+    .typewriter { color: var(--primary); border-right: 3px solid var(--primary); animation: blink 0.75s step-end infinite; }
     @keyframes blink { 50% { border-color: transparent; } }
+    .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8; }
 
-    .hero p {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-
-    /* --- SECTIONS --- */
-    section {
-      padding: 80px 24px;
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-    
+    /* --- COMMON SECTIONS --- */
+    section { padding: 80px 24px; max-width: var(--max-width); margin: 0 auto; }
     .section-title {
-      font-size: 32px;
-      margin-bottom: 60px;
-      position: relative;
-      display: inline-block;
+      font-size: 32px; margin-bottom: 60px; position: relative; display: inline-block;
     }
     .section-title::after {
-      content: '';
-      position: absolute;
-      width: 60%;
-      height: 4px;
-      background: var(--primary);
-      bottom: -10px;
-      left: 0;
-      border-radius: 2px;
+      content: ''; position: absolute; width: 60%; height: 4px;
+      background: var(--primary); bottom: -10px; left: 0; border-radius: 2px;
     }
 
-    /* --- TIMELINE (Experience) --- */
-    .timeline {
-      position: relative;
-      border-left: 3px solid #e0e0e0;
-      margin-left: 10px;
-      padding-left: 40px;
-    }
-    
+    /* --- TIMELINE (EXPERIENCE) --- */
+    .timeline { position: relative; border-left: 3px solid #e0e0e0; margin-left: 10px; padding-left: 40px; }
     .timeline-item { position: relative; margin-bottom: 60px; }
-    
     .timeline-dot {
-      position: absolute;
-      left: -52px; top: 5px;
-      width: 20px; height: 20px;
-      background: var(--bg);
-      border: 4px solid var(--secondary);
-      border-radius: 50%;
-      transition: 0.3s;
+      position: absolute; left: -52px; top: 5px; width: 20px; height: 20px;
+      background: var(--bg); border: 4px solid var(--secondary); border-radius: 50%; transition: 0.3s;
     }
-    
-    .timeline-item:hover .timeline-dot {
-      background: var(--secondary);
-      box-shadow: 0 0 0 6px rgba(141, 182, 0, 0.2);
+    .timeline-item:hover .timeline-dot { background: var(--secondary); box-shadow: 0 0 0 6px rgba(141, 182, 0, 0.2); }
+
+    /* CARD CONTENT */
+    .timeline-content, .leadership-card {
+      background: var(--surface); padding: 30px; border-radius: var(--radius);
+      box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
+      /* SIDE BY SIDE LOGO & TEXT */
+      display: flex; gap: 25px; align-items: flex-start;
+    }
+    .timeline-item:hover .timeline-content, .leadership-card:hover {
+      transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2);
     }
 
-    .timeline-content {
-      background: var(--surface);
-      padding: 30px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.03);
-      transition: 0.3s;
+    /* SHARED LOGO STYLE */
+    .company-logo {
+      width: 70px; height: 70px; object-fit: contain; border-radius: 12px;
+      background: #fff; border: 1px solid #eee; padding: 4px; flex-shrink: 0;
     }
-    
-    .timeline-item:hover .timeline-content {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(255, 153, 51, 0.2);
+
+    .content-text { flex: 1; }
+    .header-row {
+      display: flex; justify-content: space-between; flex-wrap: wrap;
+      margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;
     }
-    
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 15px;
-    }
-    
     .role-title { font-size: 18px; font-weight: 700; color: #111; }
     .company { font-weight: 600; color: var(--primary); font-size: 16px; margin-top:4px; }
     .date { font-size: 14px; color: var(--text-muted); font-weight: 600; }
-    
-    .timeline-content li { margin-bottom: 10px; color: #555; font-size: 15px; }
-    
+    ul { margin: 0; padding-left: 18px; }
+    li { margin-bottom: 10px; color: #555; font-size: 15px; }
+
     .stat-highlight {
-      color: var(--primary);
-      font-weight: 800;
-      background: rgba(255, 153, 51, 0.1);
-      padding: 0 4px;
-      border-radius: 4px;
+      color: var(--primary); font-weight: 800; background: rgba(255, 153, 51, 0.1);
+      padding: 0 4px; border-radius: 4px;
     }
 
-    /* --- GRID LAYOUT --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 30px;
-    }
-    
-    .card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: 0.3s;
-      border: 1px solid rgba(0,0,0,0.03);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      position: relative;
-    }
-    
-    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-    
-    /* Make the whole card clickable for projects */
-    .card-link {
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
+    /* --- LEADERSHIP (VERTICAL STACK) --- */
+    .leadership-stack { display: flex; flex-direction: column; gap: 30px; }
 
-    .card-body { padding: 25px; display:flex; flex-direction:column; flex:1; }
-    .card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); }
-    .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
-    .card ul { margin: 0; padding-left: 18px; }
-    .card li { margin-bottom: 8px; font-size: 14px; color: #666; }
-    
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top:15px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
     .tag {
-      font-size: 11px; font-weight: 700; padding: 4px 10px;
-      border-radius: 4px; text-transform: uppercase; background: #f1f1f1; color: #555;
+      font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 4px;
+      text-transform: uppercase; background: #f1f1f1; color: #555;
     }
     .tag.tech { background: rgba(141, 182, 0, 0.1); color: var(--secondary); }
     .tag.biz { background: rgba(255, 153, 51, 0.1); color: var(--primary); }
 
-    /* --- SKILLS --- */
-    .skills-wrapper {
-      background: var(--surface); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow);
+    /* --- PROJECTS GRID --- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
+    .card {
+      background: var(--surface); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03);
+      display: flex; flex-direction: column; height: 100%;
     }
+    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+    .card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+    .card-body { padding: 25px; display:flex; flex-direction:column; flex:1; }
+    .card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); }
+    .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
+
+    /* --- SKILLS --- */
+    .skills-wrapper { background: var(--surface); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
     .skill-category { margin-bottom: 30px; }
     .skill-category h3 { font-size: 16px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px;}
     .skill-pill-container { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -318,63 +201,44 @@
       border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px;
       font-weight: 600; font-size: 14px; color: var(--text-main); transition: 0.2s; background: white;
     }
-    .skill-pill:hover {
-      border-color: var(--primary); color: var(--primary); background: rgba(255, 153, 51, 0.05);
-    }
+    .skill-pill:hover { border-color: var(--primary); color: var(--primary); background: rgba(255, 153, 51, 0.05); }
 
-    /* --- CONTACT FORM --- */
+    /* --- CONTACT --- */
     .contact-container {
       background: linear-gradient(135deg, var(--surface) 0%, #fffbf5 100%);
-      padding: 50px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--primary);
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow);
+      border: 1px solid var(--primary); max-width: 800px; margin: 0 auto;
     }
-    
-    .form-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;
-    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
     .form-group { display: flex; flex-direction: column; gap: 8px; }
     .form-group.full { grid-column: 1 / -1; }
-    
-    .form-group label {
-      font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
-    }
+    .form-group label { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
     .form-group input, .form-group textarea {
       padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
       background: white; font-family: inherit; font-size: 15px; outline: none; transition: 0.2s;
     }
     .form-group textarea { min-height: 120px; resize: vertical; }
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1);
-    }
-    
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1); }
     .submit-btn {
       background: var(--primary); color: white; border: none; padding: 14px 28px;
-      border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer;
-      width: 100%; margin-top: 10px; transition: 0.2s;
+      border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px; transition: 0.2s;
     }
     .submit-btn:hover { background: #e68a2e; transform: translateY(-2px); }
 
-    /* --- FOOTER --- */
-    footer {
-      text-align: center; padding: 50px 0; color: var(--text-muted); font-size: 14px;
-      border-top: 1px solid var(--border); margin-top: 60px;
-    }
+    footer { text-align: center; padding: 50px 0; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 60px; }
 
-    /* --- MOBILE --- */
     @media (max-width: 900px) {
       .hero h1 { font-size: 42px; }
-      .nav-links { display: none; } /* Simplified for mobile */
+      .nav-links { display: none; }
       .timeline { padding-left: 20px; margin-left: 0; }
       .timeline-dot { left: -29px; width: 15px; height: 15px; border-width: 3px; }
       .form-grid { grid-template-columns: 1fr; }
-      .timeline-header { flex-direction: column; gap: 4px; }
+      .header-row { flex-direction: column; gap: 4px; }
       .date { text-align: left; margin-bottom: 8px; }
-      .nav-actions .icon-btn { display:none; } /* Hide icons on small mobile, keep Connect */
+      .timeline-content, .leadership-card { flex-direction: column; gap: 15px; }
+      .company-logo { width: 60px; height: 60px; }
       .nav-actions { margin-left: auto; }
+      .nav-actions .icon-btn { display: none; }
     }
   </style>
 </head>
@@ -383,23 +247,15 @@
   <nav>
     <div class="nav-container">
       <div class="logo">Shivansh<span>.</span></div>
-      
       <div class="nav-links">
         <a href="#experience">Experience</a>
         <a href="#leadership">Leadership</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
       </div>
-
       <div class="nav-actions">
-        <a href="https://www.linkedin.com/in/-shivanshgupta" target="_blank" class="icon-btn" aria-label="LinkedIn">
-          <i data-feather="linkedin" style="width:18px; height:18px;"></i>
-        </a>
-        
-        <a href="mailto:shivansh@usc.edu" class="icon-btn" aria-label="Gmail">
-          <i data-feather="mail" style="width:18px; height:18px;"></i>
-        </a>
-
+        <a href="https://www.linkedin.com/in/-shivanshgupta" target="_blank" class="icon-btn" aria-label="LinkedIn"><i data-feather="linkedin" style="width:18px; height:18px;"></i></a>
+        <a href="mailto:shivansh@usc.edu" class="icon-btn" aria-label="Gmail"><i data-feather="mail" style="width:18px; height:18px;"></i></a>
         <a href="#contact" class="btn-connect">Let's Connect</a>
       </div>
     </div>
@@ -408,98 +264,93 @@
   <section class="hero" id="about">
     <span class="hero-hello">Hello, I'm</span>
     <h1>Shivansh Gupta<br><span class="typewriter" id="typing-text"></span></h1>
-    <p>
-      Pursuing <b>Artificial Intelligence for Business</b> at USC. 
-      I work at the intersection of business and technology, translating technical capabilities into practical business value. 
-      I enjoy understanding problems from both perspectives and developing technology-driven solutions.
-    </p>
+    <p>Pursuing <b>Artificial Intelligence for Business</b> at USC. I work at the intersection of business and technology, translating technical capabilities into practical business value.</p>
   </section>
 
   <section id="experience">
     <h2 class="section-title">Experience</h2>
-    
     <div class="timeline">
       
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <div class="role-title">Business Analyst Intern</div>
-              <div class="company">Nexedge Capital</div>
+          <img src="images/nexedge.png" alt="Nexedge Capital" class="company-logo">
+          <div class="content-text">
+            <div class="header-row">
+              <div><div class="role-title">Business Analyst Intern</div><div class="company">Nexedge Capital</div></div>
+              <div class="date">Delhi, India • Dec 2025 - Jan 2026</div>
             </div>
-            <div class="date">Delhi, India • Dec 2025 - Jan 2026</div>
+            <ul>
+              <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving <span class="stat-highlight">2,500+ hours per quarter</span> in overall manual efforts.</li>
+              <li>Designed a <span class="stat-highlight">SQL-based workflow</span> to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
+            </ul>
           </div>
-          <ul>
-            <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving <span class="stat-highlight">2,500+ hours per quarter</span> in overall manual efforts.</li>
-            <li>Designed a <span class="stat-highlight">SQL-based workflow</span> to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
-          </ul>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <div class="role-title">Founder</div>
-              <div class="company">AyurMeals</div>
+          <img src="images/ayurmeals.png" alt="AyurMeals" class="company-logo">
+          <div class="content-text">
+            <div class="header-row">
+              <div><div class="role-title">Founder</div><div class="company">AyurMeals</div></div>
+              <div class="date">Delhi, India • Jun 2023 - Jun 2025</div>
             </div>
-            <div class="date">Delhi, India • Jun 2023 - Jun 2025</div>
+            <ul>
+              <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
+              <li>Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in <span class="stat-highlight">Times of India (Nov ’24)</span>.</li>
+              <li>Launched AyurMeals' inspired dish in 10 govt. schools in partnership with <span class="stat-highlight">Akshay Patra</span>. Endorsed by the Govt. of India.</li>
+              <li>Shortlisted among 600 students for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge.</li>
+            </ul>
           </div>
-          <ul>
-            <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
-            <li>Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in <span class="stat-highlight">Times of India (Nov ’24)</span> for modernizing wisdom of Ayurveda.</li>
-            <li>Launched AyurMeals' inspired dish in 10 govt. schools in partnership with <span class="stat-highlight">Akshay Patra</span>, the largest midday meal provider in India. Endorsed by the Govt. of India for impacting public health and refining preventive healthcare.</li>
-            <li>Shortlisted among 600 students from school for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge, for exceptional analytical skills and in-depth knowledge of the business.</li>
-          </ul>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <div class="role-title">Growth Intern</div>
-              <div class="company">The United Coffee House</div>
+          <img src="images/uch.png" alt="United Coffee House" class="company-logo">
+          <div class="content-text">
+            <div class="header-row">
+              <div><div class="role-title">Growth Intern</div><div class="company">The United Coffee House</div></div>
+              <div class="date">Delhi, India • Mar 2024</div>
             </div>
-            <div class="date">Delhi, India • Mar 2024</div>
+            <ul>
+              <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by <span class="stat-highlight">30%</span> in Chandigarh.</li>
+              <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork & customer experience.</li>
+              <li>Ideated and scripted 10+ reels, leading to a <span class="stat-highlight">20% increase</span> in customer engagement on social media platforms.</li>
+            </ul>
           </div>
-          <ul>
-            <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by <span class="stat-highlight">30%</span> in Chandigarh.</li>
-            <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork & customer experience.</li>
-            <li>Ideated and scripted 10+ reels, leading to a <span class="stat-highlight">20% increase</span> in customer engagement on social media platforms.</li>
-          </ul>
         </div>
       </div>
 
-       <div class="timeline-item">
+      <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <div class="timeline-header">
-            <div>
-              <div class="role-title">Sales and Marketing Intern</div>
-              <div class="company">Mr. Moustaches Cakes</div>
+           <img src="images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
+           <div class="content-text">
+            <div class="header-row">
+              <div><div class="role-title">Sales and Marketing Intern</div><div class="company">Mr. Moustaches Cakes</div></div>
+              <div class="date">Gurugram, India • Jun 2023 - Jul 2023</div>
             </div>
-            <div class="date">Gurugram, India • Jun 2023 - Jul 2023</div>
+            <ul>
+              <li>Expanded corporate client sales by <span class="stat-highlight">15%</span> by acquiring new accounts through outreach and referral-based leads.</li>
+              <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery & retaining key clients.</li>
+            </ul>
           </div>
-          <ul>
-            <li>Expanded corporate client sales by <span class="stat-highlight">15%</span> by acquiring new accounts through outreach and referral-based leads.</li>
-            <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery & retaining key clients.</li>
-          </ul>
         </div>
       </div>
-      
     </div>
   </section>
 
   <section id="leadership">
-    <h2 class="section-title">Leadership & Impact</h2>
-    <div class="grid">
+    <h2 class="section-title">Leadership & Involvement</h2>
+    <div class="leadership-stack">
         
-        <div class="card">
-            <div class="card-body">
+        <div class="leadership-card">
+            <img src="images/maia.png" alt="MAIA" class="company-logo">
+            <div class="content-text">
                 <h3>USC Marshall Artificial Intelligence Association (MAIA)</h3>
                 <div class="card-meta">Project Member, Entertainment Dept. • Sept 2025 - Present</div>
                 <ul>
@@ -507,15 +358,14 @@
                     <li>Developing a task-based recommender using Apple Music previews, Librosa analysis, and similarity modeling.</li>
                 </ul>
                 <div class="tags">
-                    <span class="tag tech">FastAPI</span>
-                    <span class="tag tech">Supabase</span>
-                    <span class="tag tech">Redis</span>
+                    <span class="tag tech">FastAPI</span><span class="tag tech">Supabase</span><span class="tag tech">Redis</span>
                 </div>
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-body">
+        <div class="leadership-card">
+            <img src="images/cloud.png" alt="USC Cloud" class="company-logo">
+            <div class="content-text">
                 <h3>USC Cloud</h3>
                 <div class="card-meta">Member • Sept 2025 - Present</div>
                 <ul>
@@ -523,12 +373,10 @@
                     <li>Proposed influencer tours, hero reels, and travel-platform partnerships to the Tour team, expected to 5x revenue.</li>
                 </ul>
                 <div class="tags">
-                    <span class="tag biz">Strategy</span>
-                    <span class="tag biz">Growth</span>
+                    <span class="tag biz">Strategy</span><span class="tag biz">Growth</span>
                 </div>
             </div>
         </div>
-
     </div>
   </section>
 
@@ -538,27 +386,16 @@
       <div class="skill-category">
         <h3>Skills</h3>
         <div class="skill-pill-container">
-          <div class="skill-pill">Excel</div>
-          <div class="skill-pill">SQL</div>
-          <div class="skill-pill">Python</div>
-          <div class="skill-pill">Prompt Engineering</div>
-          <div class="skill-pill">Data Analysis</div>
-          <div class="skill-pill">Project Management</div>
-          <div class="skill-pill">Business Intelligence</div>
-          <div class="skill-pill">Strategy</div>
+          <div class="skill-pill">Excel</div><div class="skill-pill">SQL</div><div class="skill-pill">Python</div>
+          <div class="skill-pill">Prompt Engineering</div><div class="skill-pill">Data Analysis</div>
+          <div class="skill-pill">Project Management</div><div class="skill-pill">Business Intelligence</div><div class="skill-pill">Strategy</div>
         </div>
       </div>
       <div class="skill-category">
         <h3>Interests</h3>
         <div class="skill-pill-container">
-          <div class="skill-pill">Table Tennis</div>
-          <div class="skill-pill">Pickleball</div>
-          <div class="skill-pill">Nature Photography</div>
-          <div class="skill-pill">Gym</div>
-          <div class="skill-pill">Hiking</div>
-          <div class="skill-pill">Spirituality</div>
-          <div class="skill-pill">Yoga</div>
-          <div class="skill-pill">Dance</div>
+          <div class="skill-pill">Table Tennis</div><div class="skill-pill">Pickleball</div><div class="skill-pill">Nature Photography</div>
+          <div class="skill-pill">Gym</div><div class="skill-pill">Hiking</div><div class="skill-pill">Spirituality</div><div class="skill-pill">Yoga</div><div class="skill-pill">Dance</div>
         </div>
       </div>
     </div>
@@ -573,12 +410,10 @@
               <h3>Research Paper on Food Choices in Delhi NCR Workforce <i data-feather="external-link" style="width:16px; height:16px; vertical-align:middle; color:var(--primary);"></i></h3>
               <div class="card-meta">Mar 2024 – Dec 2024</div>
               <ul>
-                <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded <span class="stat-highlight">CREST Gold</span> by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
+                <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design; presented findings at SigmaXi International Conference; awarded <span class="stat-highlight">CREST Gold</span> by the British Science Association.</li>
               </ul>
               <div class="tags">
-                <span class="tag biz">Research</span>
-                <span class="tag biz">Healthcare</span>
-                <span class="tag biz">SigmaXi</span>
+                <span class="tag biz">Research</span><span class="tag biz">Healthcare</span><span class="tag biz">SigmaXi</span>
               </div>
             </div>
         </a>
@@ -595,33 +430,17 @@
 
       <form id="contactForm" action="https://formspree.io/f/xpqqrook" method="POST">
         <div class="form-grid">
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" name="firstName" autocomplete="given-name">
-            </div>
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" name="lastName" autocomplete="family-name">
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" required autocomplete="email">
-            </div>
-            <div class="form-group">
-                <label>Phone (Optional)</label>
-                <input type="tel" name="phone" autocomplete="tel">
-            </div>
-            <div class="form-group full">
-                <label>Message</label>
-                <textarea name="message" required></textarea>
-            </div>
+            <div class="form-group"><label>First Name</label><input type="text" name="firstName" autocomplete="given-name"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" name="lastName" autocomplete="family-name"></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" required autocomplete="email"></div>
+            <div class="form-group"><label>Phone (Optional)</label><input type="tel" name="phone" autocomplete="tel"></div>
+            <div class="form-group full"><label>Message</label><textarea name="message" required></textarea></div>
             <div class="form-group full">
                 <button class="submit-btn" type="submit">Send Message</button>
                 <p id="formSuccess" style="display:none; color: var(--secondary); font-weight:700; margin-top:10px;">
                     ✓ Message sent successfully. I’ll get back to you soon.
                 </p>
             </div>
-            
             <input type="hidden" name="_subject" value="New message from Shivansh’s portfolio">
             <input type="text" name="_gotcha" style="display:none">
         </div>
@@ -634,57 +453,24 @@
   </footer>
 
   <script>
-    // 1. Initialize Feather Icons
     feather.replace();
-
-    // 2. Set Footer Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // 3. Typewriter Effect
     const text = ["Consulting.", "Automation.", "Product.", "Strategy."];
-    let count = 0;
-    let index = 0;
-    let currentText = "";
-    let letter = "";
-    
+    let count = 0; let index = 0; let currentText = ""; let letter = "";
     (function type() {
       if (count === text.length) { count = 0; }
-      currentText = text[count];
-      letter = currentText.slice(0, ++index);
-      
+      currentText = text[count]; letter = currentText.slice(0, ++index);
       document.querySelector("#typing-text").textContent = letter;
-      
-      if (letter.length === currentText.length) {
-        count++;
-        index = 0;
-        setTimeout(type, 2000); // Pause at end of word
-      } else {
-        setTimeout(type, 150);
-      }
+      if (letter.length === currentText.length) { count++; index = 0; setTimeout(type, 2000); } else { setTimeout(type, 150); }
     }());
-
-    // 4. Handle Contact Form
     const form = document.getElementById("contactForm");
     const successMsg = document.getElementById("formSuccess");
-    
     form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
+      e.preventDefault(); const formData = new FormData(form);
       try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: { "Accept": "application/json" }
-        });
-        if (response.ok) {
-          form.reset();
-          successMsg.style.display = "block";
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      } catch (error) {
-        alert("Network error. Please try again later.");
-      }
+        const response = await fetch(form.action, { method: "POST", body: formData, headers: { "Accept": "application/json" } });
+        if (response.ok) { form.reset(); successMsg.style.display = "block"; } else { alert("Something went wrong. Please try again."); }
+      } catch (error) { alert("Network error. Please try again later."); }
     });
   </script>
 </body>
