@@ -168,8 +168,9 @@
       padding: 0 4px; border-radius: 4px;
     }
 
-    /* --- LEADERSHIP (VERTICAL STACK) --- */
-    .leadership-stack { display: flex; flex-direction: column; gap: 30px; }
+    /* --- LEADERSHIP & PROJECTS (VERTICAL STACK) --- */
+    /* This class makes items stack one below another (Full Width) */
+    .vertical-stack { display: flex; flex-direction: column; gap: 30px; }
 
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
     .tag {
@@ -179,23 +180,22 @@
     .tag.tech { background: rgba(141, 182, 0, 0.1); color: var(--secondary); }
     .tag.biz { background: rgba(255, 153, 51, 0.1); color: var(--primary); }
 
-    /* --- PROJECTS GRID --- */
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; }
-    .card {
+    /* Card styling for clickable projects */
+    .project-card {
       background: var(--surface); border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03);
-      display: flex; flex-direction: column; height: 100%;
+      width: 100%; /* Force full width */
     }
-    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-    .card-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
-    .card-body { padding: 25px; display:flex; flex-direction:column; flex:1; }
-    .card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); }
+    .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
+    .card-link { text-decoration: none; color: inherit; display: block; height: 100%; padding: 30px; }
+    
+    .project-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); margin-top: 0;}
     .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
+
 
     /* --- SKILLS --- */
     .skills-wrapper { background: var(--surface); padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
-    .skill-category { margin-bottom: 30px; }
-    .skill-category h3 { font-size: 16px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px;}
+    /* Removed Interests styling since section is gone */
     .skill-pill-container { display: flex; flex-wrap: wrap; gap: 10px; }
     .skill-pill {
       border: 1px solid var(--border); padding: 8px 16px; border-radius: 50px;
@@ -346,7 +346,7 @@
 
   <section id="leadership">
     <h2 class="section-title">Leadership & Involvement</h2>
-    <div class="leadership-stack">
+    <div class="vertical-stack">
         
         <div class="leadership-card">
             <img src="images/maia.png" alt="MAIA" class="company-logo">
@@ -381,32 +381,23 @@
   </section>
 
   <section id="skills">
-    <h2 class="section-title">Skills & Interests</h2>
+    <h2 class="section-title">Skills</h2>
     <div class="skills-wrapper">
-      <div class="skill-category">
-        <h3>Skills</h3>
-        <div class="skill-pill-container">
-          <div class="skill-pill">Excel</div><div class="skill-pill">SQL</div><div class="skill-pill">Python</div>
-          <div class="skill-pill">Prompt Engineering</div><div class="skill-pill">Data Analysis</div>
-          <div class="skill-pill">Project Management</div><div class="skill-pill">Business Intelligence</div><div class="skill-pill">Strategy</div>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h3>Interests</h3>
-        <div class="skill-pill-container">
-          <div class="skill-pill">Table Tennis</div><div class="skill-pill">Pickleball</div><div class="skill-pill">Nature Photography</div>
-          <div class="skill-pill">Gym</div><div class="skill-pill">Hiking</div><div class="skill-pill">Spirituality</div><div class="skill-pill">Yoga</div><div class="skill-pill">Dance</div>
-        </div>
+      <div class="skill-pill-container">
+        <div class="skill-pill">Excel</div><div class="skill-pill">SQL</div><div class="skill-pill">Python</div>
+        <div class="skill-pill">Prompt Engineering</div><div class="skill-pill">Data Analysis</div>
+        <div class="skill-pill">Project Management</div><div class="skill-pill">Business Intelligence</div><div class="skill-pill">Strategy</div>
       </div>
     </div>
   </section>
 
   <section id="projects">
     <h2 class="section-title">Projects</h2>
-    <div class="grid">
-      <div class="card">
+    <div class="vertical-stack">
+      
+      <div class="project-card">
         <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" class="card-link">
-            <div class="card-body">
+            <div class="content-text">
               <h3>Research Paper on Food Choices in Delhi NCR Workforce <i data-feather="external-link" style="width:16px; height:16px; vertical-align:middle; color:var(--primary);"></i></h3>
               <div class="card-meta">Mar 2024 – Dec 2024</div>
               <ul>
@@ -418,6 +409,7 @@
             </div>
         </a>
       </div>
+
     </div>
   </section>
 
