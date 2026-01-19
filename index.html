@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shivansh Gupta | Portfolio</title>
-  <meta name="description" content="Shivansh Gupta — AI for Business @ USC." />
+  <meta name="description" content="Shivansh Gupta — AI for Business @ USC. Experience, leadership, skills, and projects." />
 
+  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,144 +14,605 @@
   <style>
     :root{
       --bg:#0b0f14;
+      --panel:#0f1621;
       --text:#e9eef6;
       --muted:#a8b3c3;
-      --line:rgba(255,255,255,.1);
-      --accent:#ff9933;
+      --line:rgba(255,255,255,.10);
+      --chip:rgba(255,255,255,.06);
+      --shadow: 0 12px 34px rgba(0,0,0,.40);
       --radius:18px;
-      --max:1100px;
+      --max: 1100px;
+
+      /* AyurMeals-inspired accents (used sparingly) */
+      --accent:#ff9933; /* saffron */
+      --accent2:#8db600; /* green */
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:Inter,system-ui;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background:radial-gradient(900px 500px at 10% -10%, rgba(255,153,51,.18), transparent 55%),var(--bg);
+      background:
+        radial-gradient(1100px 560px at 10% -10%, rgba(255,153,51,.22), transparent 55%),
+        radial-gradient(900px 520px at 92% 10%, rgba(141,182,0,.12), transparent 60%),
+        var(--bg);
     }
 
+    a{color:inherit; text-decoration:none}
+    /* left-leaning layout (not centered) */
     .container{max-width:var(--max); margin:0; padding:0 22px}
-    a{text-decoration:none;color:inherit}
 
-    /* NAV */
-    .nav{position:sticky;top:0;background:rgba(11,15,20,.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-    .brand{font-weight:700;display:flex;align-items:center;gap:10px}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    /* Top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,20,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .dot{
+      width:10px; height:10px; border-radius:999px; background:var(--accent);
+      box-shadow:0 0 0 4px rgba(255,153,51,.18);
+    }
 
-    .nav-links{display:flex;gap:10px;align-items:center}
-    .nav-links>a{color:var(--muted);font-size:13px;font-weight:700;padding:8px 10px;border-radius:12px}
-    .nav-links>a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .nav-links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+    .nav-links > a{
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:12px;
+    }
+    .nav-links > a:hover{background:rgba(255,255,255,.06); color:var(--text)}
 
-    .icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
-    .icon-btn svg{width:20px;fill:var(--muted)}
-    .icon-btn:hover svg{fill:var(--text)}
+    /* Header icon cluster + Connect button */
+    .nav-cta{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-left:10px;
+    }
+    .icon-btn{
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .icon-btn:hover{ border-color: rgba(255,255,255,.22); }
+    .icon-btn svg{
+      width:20px;
+      height:20px;
+      fill: var(--muted);
+    }
+    .icon-btn:hover svg{ fill: var(--text); }
 
-    .connect-btn{padding:10px 16px;border-radius:14px;border:1px solid rgba(255,153,51,.7);background:rgba(255,153,51,.12);font-weight:800}
+    .connect-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,153,51,.65);
+      background: rgba(255,153,51,.12);
+      color: var(--text);
+      font-weight:800;
+      font-size:13px;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .connect-btn:hover{
+      background: rgba(255,153,51,.18);
+      border-color: rgba(255,153,51,.95);
+    }
 
-    /* SECTIONS */
+    /* Hero */
+    .hero{padding:44px 0 18px}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+    h1{
+      margin:16px 0 10px;
+      font-size:46px;
+      line-height:1.05;
+      letter-spacing:-.9px;
+    }
+    .sub{
+      max-width:820px;
+      font-size:16.5px;
+      line-height:1.75;
+      color:var(--muted);
+      margin:0;
+    }
+
+    /* Sections */
     section{padding:36px 0}
-    h1{font-size:46px;margin:16px 0}
-    h2{font-size:20px;margin:0}
-    .sub{color:var(--muted);max-width:820px}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin-bottom:14px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
 
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:rgba(255,255,255,.03)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+    }
+    .card{
+      grid-column: span 12;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
 
-    /* CONNECT */
+    /* Experience / Leadership cards */
+    .role{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .role h3{margin:0; font-size:15.5px}
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:4px;
+      line-height:1.5;
+    }
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      background: var(--chip);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      font-weight:800;
+    }
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:7px 0; color:var(--muted); line-height:1.65; font-size:13.6px}
+
+    /* Skills + Leadership layout */
+    .cols-2 .card{grid-column: span 6}
+
+    footer{
+      padding:26px 0 34px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      margin-top:24px;
+      font-size:13px;
+    }
+
+    @media (max-width: 900px){
+      h1{font-size:38px}
+      .cols-2 .card{grid-column: span 12}
+    }
+
+    /* LET'S CONNECT (your style, secure form, no warnings) */
     .connect-wrap{
       border-radius:24px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      padding:28px;
-      box-shadow:0 20px 60px rgba(0,0,0,.3);
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(255,153,51,.18), transparent 55%),
+        radial-gradient(800px 450px at 95% 0%, rgba(141,182,0,.10), transparent 60%),
+        rgba(255,255,255,.03);
+      box-shadow: 0 25px 80px rgba(0,0,0,.25);
+      padding: 26px;
     }
+
+    .connect-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+
+    .connect-top h3{
+      margin:0;
+      font-size: 30px;
+      letter-spacing:-.6px;
+    }
+    .connect-top p{
+      margin:8px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 720px;
+      font-size: 14px;
+    }
+
+    .connect-badges{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top: 2px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .badge svg{width:16px; height:16px; fill: var(--muted);}
 
     .connect-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap:14px;
-      margin-top:14px;
+      margin-top: 10px;
     }
 
-    .field{display:flex;flex-direction:column;gap:6px}
-    .field.full{grid-column:1/-1}
-    .field span{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase}
+    .field{display:flex; flex-direction:column; gap:8px;}
+    .field.full{grid-column: 1 / -1;}
 
-    .field input,.field textarea{
-      background:rgba(0,0,0,.2);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px;
-      color:var(--text);
-      font-size:14px;
+    .field span{
+      font-weight: 700;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing:.3px;
+      text-transform: uppercase;
     }
 
-    .field textarea{min-height:160px}
+    .field input, .field textarea{
+      width:100%;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      padding: 14px 14px;
+      font-size: 15px;
+      outline:none;
+      color: var(--text);
+    }
+    .field textarea{
+      min-height: 180px;
+      resize: vertical;
+    }
+    .field input:focus, .field textarea:focus{
+      border-color: rgba(255,153,51,.55);
+      box-shadow: 0 0 0 4px rgba(255,153,51,.12);
+    }
+
+    .send-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
     .send-btn{
-      margin-top:10px;
-      padding:12px 18px;
-      border-radius:14px;
-      border:1px solid rgba(255,153,51,.8);
-      background:linear-gradient(180deg,#ffb566,#ff9933);
-      font-weight:900;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,153,51,.65);
+      background: linear-gradient(180deg, rgba(255,153,51,.95), rgba(255,153,51,.70));
+      font-weight: 900;
+      font-size: 14px;
       cursor:pointer;
       color:#111;
     }
+    .send-btn:hover{ filter: brightness(1.03); }
 
-    footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13px}
+    .privacy{
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
 
-    @media(max-width:860px){
-      .connect-grid{grid-template-columns:1fr}
-      h1{font-size:38px}
+    @media (max-width: 860px){
+      .connect-grid{grid-template-columns: 1fr;}
     }
   </style>
 </head>
 
 <body>
+  <!-- HEADER -->
   <div class="nav">
     <div class="container nav-inner">
-      <div class="brand"><span class="dot"></span>Shivansh Gupta</div>
+      <div class="brand">
+        <span class="dot"></span>
+        <a href="#experience">Shivansh Gupta</a>
+      </div>
+
       <div class="nav-links">
+        <!-- About removed from header (per request) -->
         <a href="#experience">Experience</a>
-        <a href="#leadership">Leadership</a>
+        <a href="#leadership">Leadership &amp; Impact</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
 
-        <a class="icon-btn" href="https://linkedin.com/in/-shivanshgupta" target="_blank">
-          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H7.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31z"/></svg>
-        </a>
+        <div class="nav-cta">
+          <!-- LinkedIn -->
+          <a class="icon-btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H7.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>
+            </svg>
+          </a>
 
-        <a class="connect-btn" href="#connect">Let’s Connect</a>
+          <!-- Gmail -->
+          <a class="icon-btn" href="mailto:shivansh@usc.edu" aria-label="Gmail">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 6H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 4.2-8 5-8-5V8l8 5 8-5v2.2z"/>
+            </svg>
+          </a>
+
+          <!-- Scroll to connect section -->
+          <a class="connect-btn" href="#connect">Let&#39;s Connect</a>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <section>
+    <!-- ABOUT ME (kept as section; removed hero buttons) -->
+    <section id="about" class="hero">
+      <span class="pill">AI for Business @ USC • Consulting-focused execution</span>
       <h1>About Me</h1>
-      <p class="sub">AI for Business @ USC. I build analytics and automation systems with a consulting mindset.</p>
+      <p class="sub">
+        I’m Shivansh Gupta — an undergraduate at the University of Southern California pursuing a Bachelor of Science in
+        Artificial Intelligence for Business (Marshall School of Business &amp; Viterbi School of Engineering). I’m interested
+        in analytics, automation, and building reliable workflows that improve decision-making and execution across stakeholders.
+      </p>
     </section>
 
-    <!-- other sections unchanged -->
+    <!-- EXPERIENCE (as you provided) -->
+    <section id="experience">
+      <div class="section-head">
+        <h2>Experience</h2>
+      </div>
 
+      <div class="grid">
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Nexedge Capital</h3>
+              <div class="meta">Delhi, India<br><b>Business Analyst Intern</b> — December 2025 – January 2026</div>
+            </div>
+          </div>
+          <ul>
+            <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving 2,500+ hours per quarter in overall manual efforts.</li>
+            <li>Designed a SQL-based workflow to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>AyurMeals</h3>
+              <div class="meta">Delhi, India<br><b>Founder</b> — June 2023 – June 2025</div>
+            </div>
+          </div>
+          <ul>
+            <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
+            <li>Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in Times of India (Nov ’24) for modernizing wisdom of Ayurveda.</li>
+            <li>Launched AyurMeals' inspired dish in 10 govt. schools in partnership with Akshay Patra, the largest midday meal provider in India. Endorsed by the Govt. of India for impacting public health and refining preventive healthcare.</li>
+            <li>Shortlisted among 600 students from school for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge, for exceptional analytical skills and in-depth knowledge of the business.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>The United Coffee House</h3>
+              <div class="meta">Delhi, India<br><b>Growth Intern</b> — March 2024</div>
+            </div>
+          </div>
+          <ul>
+            <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by 30% in Chandigarh.</li>
+            <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork &amp; customer experience.</li>
+            <li>Ideated and scripted 10+ reels, leading to a 20% increase in customer engagement on social media platforms.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Mr. Moustaches Cakes</h3>
+              <div class="meta">Gurugram, India<br><b>Sales and Marketing Intern</b> — June 2023 - July 2023</div>
+            </div>
+          </div>
+          <ul>
+            <li>Expanded corporate client sales by 15% by acquiring new accounts through outreach and referral-based leads.</li>
+            <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery &amp; retaining key clients.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP & IMPACT (as you provided) -->
+    <section id="leadership">
+      <div class="section-head">
+        <h2>Leadership &amp; Impact</h2>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>USC Marshall Artificial Intelligence Association (MAIA)</h3>
+              <div class="meta">Los Angelees, CA<br><b>Project Member, Entertainment Department</b> — September 2025 - Present</div>
+            </div>
+            <div class="tags">
+              <span class="tag">FastAPI</span>
+              <span class="tag">Supabase</span>
+              <span class="tag">Redis</span>
+            </div>
+          </div>
+          <ul>
+            <li>Collaborating to develop a backend system for a music-intelligence platform using FastAPI, Supabase, Redis.</li>
+            <li>Developing a task-based recommender using Apple Music previews, Librosa analysis, and similarity modeling.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>USC Cloud</h3>
+              <div class="meta">Los Angeles, CA<br><b>Member</b> — September 2025 - Present</div>
+            </div>
+            <div class="tags">
+              <span class="tag">Strategy</span>
+              <span class="tag">Growth</span>
+              <span class="tag">Partnerships</span>
+            </div>
+          </div>
+          <ul>
+            <li>Pitched NFC chips &amp; court experiences to the Crypto.com Arena VIP Tour team to raise revenue per guest by 50%.</li>
+            <li>Proposed influencer tours, hero reels, and travel-platform partnerships to the Tour team, expected to 5x revenue.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS (as you provided) -->
+    <section id="skills">
+      <div class="section-head">
+        <h2>Skills</h2>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Skills</h3>
+              <div class="meta">From “SKILLS &amp; CERTIFICATIONS”</div>
+            </div>
+          </div>
+          <p style="margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:13.6px;">
+            Skills: Excel, SQL, Python, Prompt Engineering, Data Analysis, Project Management, Business Intelligence, Strategy
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Interests</h3>
+              <div class="meta">From “SKILLS &amp; CERTIFICATIONS”</div>
+            </div>
+          </div>
+          <p style="margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:13.6px;">
+            Interests: Table tennis, Pickleball, Nature Photography, Gym, Hiking, Spirituality, Yoga, Dance
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (as you provided) -->
+    <section id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="role">
+            <div>
+              <h3>Research Paper on Food Choices in Delhi NCR Workforce</h3>
+              <div class="meta">March 2024 – December 2024</div>
+            </div>
+          </div>
+          <ul>
+            <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- LET'S CONNECT (secure: Formspree -> emails you, no browser warning) -->
     <section id="connect">
-      <h2>Let’s Connect</h2>
+      <div class="section-head">
+        <h2>Let’s Connect</h2>
+      </div>
 
       <div class="connect-wrap">
-        <form action="https://formspree.io/f/xpqqrook" method="POST">
-          <div class="connect-grid">
-            <label class="field"><span>First Name</span><input name="firstName"></label>
-            <label class="field"><span>Last Name</span><input name="lastName"></label>
-            <label class="field"><span>Email</span><input type="email" name="email" required></label>
-            <label class="field"><span>Phone (optional)</span><input name="phone"></label>
-            <label class="field full"><span>Message</span><textarea name="message" required></textarea></label>
+        <div class="connect-top">
+          <div>
+            <h3>Get in touch</h3>
+            <p>
+              If you’d like to connect about consulting, analytics/automation work, or student org collaborations,
+              send a quick note here.
+            </p>
+          </div>
 
-            <input type="hidden" name="_subject" value="Portfolio message">
+          <div class="connect-badges">
+            <span class="badge" title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 4.2-8 5-8-5V8l8 5 8-5v2.2z"/></svg>
+              shivansh@usc.edu
+            </span>
+            <a class="badge" href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H7.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Replace YOUR_FORMSPREE_ID with your real Formspree ID -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="connect-grid">
+            <label class="field">
+              <span>First Name</span>
+              <input type="text" name="firstName" autocomplete="given-name">
+            </label>
+
+            <label class="field">
+              <span>Last Name</span>
+              <input type="text" name="lastName" autocomplete="family-name">
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" required autocomplete="email">
+            </label>
+
+            <label class="field">
+              <span>Phone (optional)</span>
+              <input type="tel" name="phone" autocomplete="tel">
+            </label>
+
+            <label class="field full">
+              <span>Message</span>
+              <textarea name="message" required></textarea>
+            </label>
+
+            <input type="hidden" name="_subject" value="New message from Shivansh’s portfolio">
             <input type="text" name="_gotcha" style="display:none">
 
-            <div class="field full">
-              <button class="send-btn" type="submit">Send Message</button>
+            <div class="send-row full">
+              <button class="send-btn" type="submit">Send</button>
+              <div class="privacy">Secure HTTPS submission. Replies go to shivansh@usc.edu.</div>
             </div>
           </div>
         </form>
@@ -158,13 +620,19 @@
     </section>
 
     <footer>
-      © <span id="y"></span> Shivansh Gupta ·
-      <a href="mailto:shivansh@usc.edu">shivansh@usc.edu</a>
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <span>© <span id="y"></span> Shivansh Gupta</span>
+        <span>
+          <a href="mailto:shivansh@usc.edu" style="text-decoration:underline;">shivansh@usc.edu</a>
+          <span style="opacity:.6"> · </span>
+          <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" style="text-decoration:underline;">LinkedIn</a>
+        </span>
+      </div>
     </footer>
   </div>
 
   <script>
-    document.getElementById("y").textContent=new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
