@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivansh Gupta | Portfolio</title>
+  <meta name="description" content="Shivansh Gupta — AI for Business @ USC. Consulting-oriented analytics & automation." />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #111; background: #fff; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px; }
+    nav { display: flex; gap: 16px; align-items: center; justify-content: space-between; position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; padding: 12px 20px; }
+    nav a { text-decoration: none; color: #111; font-weight: 600; }
+    .links { display: flex; gap: 14px; flex-wrap: wrap; }
+    h1 { font-size: 44px; line-height: 1.05; margin: 18px 0 10px; }
+    p { font-size: 18px; line-height: 1.6; margin: 0 0 16px; color: #222; }
+    .muted { color: #555; }
+    .cta { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 10px 14px; border-radius: 10px; font-weight: 700; text-decoration: none; border: 1px solid #ddd; }
+    .btn.primary { background: #FF9933; border-color: #FF9933; color: #111; }
+    section { padding: 52px 0; border-bottom: 1px solid #f1f1f1; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 6; border: 1px solid #eee; border-radius: 16px; padding: 16px; }
+    .card h3 { margin: 0 0 8px; }
+    .tag { display: inline-block; font-size: 12px; padding: 4px 8px; border-radius: 999px; background: #f6f6f6; border: 1px solid #eee; margin-right: 6px; margin-top: 8px; }
+    footer { padding: 28px 0; }
+    @media (max-width: 780px) { h1 { font-size: 34px; } .card { grid-column: span 12; } nav { position: static; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Shivansh</a>
+    <div class="links">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <!-- Update this once you upload a resume.pdf into /assets -->
+      <a href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="home">
+      <p class="muted">AI for Business @ USC • Consulting-oriented analytics & automation</p>
+      <h1>Shivansh Gupta</h1>
+      <p>I build reliable data workflows and automation that reduce manual work, improve accuracy, and support better decisions.</p>
+      <div class="cta">
+        <a class="btn primary" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="muted">Mini case studies (Problem → Approach → Impact).</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Financial Data Validation & Automation</h3>
+          <p>Automated statement extraction and reconciliation into Excel to support independent verification and reduce manual effort.</p>
+          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Excel</span>
+        </div>
+
+        <div class="card">
+          <h3>AyurMeals — Operating Model & Growth</h3>
+          <p>Built a diagnostic-driven personalization workflow and executed partnerships across schools, corporates, and public-sector programs.</p>
+          <span class="tag">Strategy</span><span class="tag">Ops</span><span class="tag">GTM</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>NexEdge Capital — Data Automation / Analytics</h3>
+          <p class="muted">Python, SQL, Bloomberg data, Excel automation</p>
+          <p>Built workflows to validate and reconcile financial statements and improve repeatability of reporting.</p>
+        </div>
+        <div class="card">
+          <h3>Founder — AyurMeals</h3>
+          <p class="muted">Partnerships, execution, operations</p>
+          <p>Executed multi-stakeholder partnerships and built scalable processes for personalized plans.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p><strong>Technical:</strong> Python, SQL, Excel automation, APIs</p>
+      <p><strong>Consulting:</strong> Structured problem solving, stakeholder communication, data-driven decision making</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/yourhandle</a></p>
+    </section>
+
+    <footer class="muted">
+      © <span id="y"></span> Shivansh Gupta
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
