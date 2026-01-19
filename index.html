@@ -279,10 +279,20 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      position: relative;
     }
     
     .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
     
+    /* Make the whole card clickable for projects */
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
     .card-body { padding: 25px; display:flex; flex-direction:column; flex:1; }
     .card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); }
     .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
@@ -421,8 +431,8 @@
             <div class="date">Delhi, India • Dec 2025 - Jan 2026</div>
           </div>
           <ul>
-            <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, saving <span class="stat-highlight">2,500+ hours per quarter</span> in manual effort.</li>
-            <li>Designed a <span class="stat-highlight">SQL + Python</span> workflow to ingest daily Bloomberg data and integrate it with a financial model, improving overall data reliability and scalability.</li>
+            <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving <span class="stat-highlight">2,500+ hours per quarter</span> in overall manual efforts.</li>
+            <li>Designed a <span class="stat-highlight">SQL-based workflow</span> to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
           </ul>
         </div>
       </div>
@@ -438,10 +448,10 @@
             <div class="date">Delhi, India • Jun 2023 - Jun 2025</div>
           </div>
           <ul>
-            <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, reducing chronic conditions for workers.</li>
-            <li>Created a diagnostic tool for 200+ users to assess dietary needs; featured in <span class="stat-highlight">Times of India (Nov ’24)</span>.</li>
-            <li>Partnered with <span class="stat-highlight">Akshay Patra</span> to launch pilot programs in 10 govt. schools. Endorsed by Govt. of India.</li>
-            <li>Shortlisted among 600 students for Thapar Entrepreneurship Academy; recognized by Shark Tank India judge Namita Thapar.</li>
+            <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
+            <li>Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in <span class="stat-highlight">Times of India (Nov ’24)</span> for modernizing wisdom of Ayurveda.</li>
+            <li>Launched AyurMeals' inspired dish in 10 govt. schools in partnership with <span class="stat-highlight">Akshay Patra</span>, the largest midday meal provider in India. Endorsed by the Govt. of India for impacting public health and refining preventive healthcare.</li>
+            <li>Shortlisted among 600 students from school for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge, for exceptional analytical skills and in-depth knowledge of the business.</li>
           </ul>
         </div>
       </div>
@@ -459,7 +469,7 @@
           <ul>
             <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by <span class="stat-highlight">30%</span> in Chandigarh.</li>
             <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork & customer experience.</li>
-            <li>Ideated and scripted 10+ reels, leading to a <span class="stat-highlight">20% increase</span> in customer engagement.</li>
+            <li>Ideated and scripted 10+ reels, leading to a <span class="stat-highlight">20% increase</span> in customer engagement on social media platforms.</li>
           </ul>
         </div>
       </div>
@@ -469,13 +479,13 @@
         <div class="timeline-content">
           <div class="timeline-header">
             <div>
-              <div class="role-title">Sales & Marketing Intern</div>
+              <div class="role-title">Sales and Marketing Intern</div>
               <div class="company">Mr. Moustaches Cakes</div>
             </div>
             <div class="date">Gurugram, India • Jun 2023 - Jul 2023</div>
           </div>
           <ul>
-            <li>Expanded corporate client sales by <span class="stat-highlight">15%</span> by acquiring new accounts through outreach.</li>
+            <li>Expanded corporate client sales by <span class="stat-highlight">15%</span> by acquiring new accounts through outreach and referral-based leads.</li>
             <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery & retaining key clients.</li>
           </ul>
         </div>
@@ -485,13 +495,13 @@
   </section>
 
   <section id="leadership">
-    <h2 class="section-title">Leadership & Impact</h2>
+    <h2 class="section-title">Leadership & Involvement</h2>
     <div class="grid">
         
         <div class="card">
             <div class="card-body">
-                <h3>USC Marshall AI Association (MAIA)</h3>
-                <div class="card-meta">Project Member • Sept 2025 - Present</div>
+                <h3>USC Marshall Artificial Intelligence Association (MAIA)</h3>
+                <div class="card-meta">Project Member, Entertainment Dept. • Sept 2025 - Present</div>
                 <ul>
                     <li>Collaborating to develop a backend system for a music-intelligence platform using FastAPI, Supabase, Redis.</li>
                     <li>Developing a task-based recommender using Apple Music previews, Librosa analysis, and similarity modeling.</li>
@@ -526,7 +536,7 @@
     <h2 class="section-title">Skills & Interests</h2>
     <div class="skills-wrapper">
       <div class="skill-category">
-        <h3>Technical & Professional Skills</h3>
+        <h3>Skills</h3>
         <div class="skill-pill-container">
           <div class="skill-pill">Excel</div>
           <div class="skill-pill">SQL</div>
@@ -548,29 +558,30 @@
           <div class="skill-pill">Hiking</div>
           <div class="skill-pill">Spirituality</div>
           <div class="skill-pill">Yoga</div>
+          <div class="skill-pill">Dance</div>
         </div>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2 class="section-title">Projects & Research</h2>
+    <h2 class="section-title">Projects</h2>
     <div class="grid">
       <div class="card">
-        <div class="card-body">
-          <h3>Research Paper on Food Choices</h3>
-          <div class="card-meta">Mar 2024 – Dec 2024</div>
-          <ul>
-            <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design.</li>
-            <li>Presented findings at SigmaXi International Conference.</li>
-            <li>Awarded <span class="stat-highlight">CREST Gold</span> by the British Science Association for innovation and scientific rigor.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag biz">Research</span>
-            <span class="tag biz">Healthcare</span>
-            <span class="tag biz">SigmaXi</span>
-          </div>
-        </div>
+        <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" class="card-link">
+            <div class="card-body">
+              <h3>Research Paper on Food Choices in Delhi NCR Workforce <i data-feather="external-link" style="width:16px; height:16px; vertical-align:middle; color:var(--primary);"></i></h3>
+              <div class="card-meta">Mar 2024 – Dec 2024</div>
+              <ul>
+                <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded <span class="stat-highlight">CREST Gold</span> by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag biz">Research</span>
+                <span class="tag biz">Healthcare</span>
+                <span class="tag biz">SigmaXi</span>
+              </div>
+            </div>
+        </a>
       </div>
     </div>
   </section>
