@@ -53,7 +53,7 @@
     }
 
     a { text-decoration: none; color: inherit; transition: 0.2s; }
-    ul { margin: 0; padding-left: 20px; }
+    ul { margin: 0; padding-left: 18px; }
 
     /* --- NAVIGATION --- */
     nav {
@@ -126,12 +126,11 @@
       background: var(--primary); bottom: -10px; left: 0; border-radius: 2px;
     }
 
-    /* --- LIST LAYOUT (Used for Experience & Leadership) --- */
-    /* This replaces the old timeline structure with a clean Logo-Left layout */
+    /* --- LIST LAYOUT (Experience & Leadership) --- */
     .list-stack {
       display: flex;
       flex-direction: column;
-      gap: 40px; /* Space between items */
+      gap: 40px; 
     }
 
     .list-item {
@@ -142,7 +141,7 @@
       border: 1px solid rgba(0,0,0,0.03);
       transition: 0.3s;
       display: flex;
-      gap: 30px; /* Space between Logo and Text */
+      gap: 30px; 
       align-items: flex-start;
     }
 
@@ -152,47 +151,56 @@
       border-color: rgba(255, 153, 51, 0.2);
     }
 
-    /* UPDATED LOGO STYLE (Matches reference image) */
+    /* LOGO STYLE */
     .company-logo {
-      width: 85px; /* Larger size */
+      width: 85px; 
       height: 85px; 
       object-fit: contain; 
       flex-shrink: 0;
-      /* No background, no border -> Just the image */
       background: transparent;
       border: none;
     }
 
     .content-text { flex: 1; }
     
+    /* Header Row: Role Top, Company Bottom | Date Right */
     .header-row {
-      display: flex; justify-content: space-between; flex-wrap: wrap;
-      margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;
+      display: flex; 
+      justify-content: space-between; 
+      flex-wrap: wrap;
+      margin-bottom: 15px; 
+      border-bottom: 1px solid #eee; 
+      padding-bottom: 15px;
+      align-items: flex-start; /* Align top */
     }
     
+    /* ROLE IS NOW TOP */
     .role-title { 
       font-size: 20px; 
       font-weight: 700; 
-      color: var(--primary); /* Highlighted Title like reference */
+      color: var(--primary); /* Orange */
       line-height: 1.2;
+      margin-bottom: 2px;
     }
     
+    /* COMPANY IS NOW BOTTOM */
     .company { 
-      font-weight: 600; 
-      color: #111; 
+      font-weight: 700; 
+      color: #111; /* Black */
       font-size: 16px; 
-      margin-top: 4px; 
+      margin-top: 0; 
     }
     
+    /* DATE FORMATTING (Uppercase, Grey) */
     .date { 
-      font-size: 14px; 
+      font-size: 13px; 
       color: var(--text-muted); 
-      font-weight: 600; 
+      font-weight: 700; 
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      text-align: right;
     }
     
-    ul { margin: 0; padding-left: 18px; }
     li { margin-bottom: 10px; color: #555; font-size: 15px; line-height: 1.7; }
 
     .stat-highlight {
@@ -208,7 +216,7 @@
     .tag.tech { background: rgba(141, 182, 0, 0.1); color: var(--secondary); }
     .tag.biz { background: rgba(255, 153, 51, 0.1); color: var(--primary); }
 
-    /* --- PROJECTS (Vertical Full Width) --- */
+    /* --- PROJECTS --- */
     .project-card {
       background: var(--surface); border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03);
@@ -263,11 +271,10 @@
       .hero h1 { font-size: 42px; }
       .nav-links { display: none; }
       .form-grid { grid-template-columns: 1fr; }
-      .header-row { flex-direction: column; gap: 4px; }
-      .date { text-align: left; margin-bottom: 8px; }
-      /* Stack on mobile */
+      /* Stack header text on mobile */
+      .header-row { flex-direction: column; gap: 4px; align-items: center; text-align: center; }
+      .date { text-align: center; margin-bottom: 8px; margin-top: 5px;}
       .list-item { flex-direction: column; gap: 15px; align-items: center; text-align: center;}
-      .header-row { justify-content: center; }
       .company-logo { width: 70px; height: 70px; }
       .nav-actions { margin-left: auto; }
       .nav-actions .icon-btn { display: none; }
@@ -308,8 +315,11 @@
         <img src="images/nexedge.png" alt="Nexedge Capital" class="company-logo">
         <div class="content-text">
           <div class="header-row">
-            <div><div class="role-title">Business Analyst Intern</div><div class="company">Nexedge Capital</div></div>
-            <div class="date">Delhi, India • Dec 2025 - Jan 2026</div>
+            <div>
+                <div class="role-title">Business Analyst Intern</div>
+                <div class="company">Nexedge Capital</div>
+            </div>
+            <div class="date">DELHI, INDIA • DEC 2025 - JAN 2026</div>
           </div>
           <ul>
             <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving <span class="stat-highlight">2,500+ hours per quarter</span> in overall manual efforts.</li>
@@ -322,8 +332,11 @@
         <img src="images/ayurmeals.png" alt="AyurMeals" class="company-logo">
         <div class="content-text">
           <div class="header-row">
-            <div><div class="role-title">Founder</div><div class="company">AyurMeals</div></div>
-            <div class="date">Delhi, India • Jun 2023 - Jun 2025</div>
+            <div>
+                <div class="role-title">Founder</div>
+                <div class="company">AyurMeals</div>
+            </div>
+            <div class="date">DELHI, INDIA • JUN 2023 - JUN 2025</div>
           </div>
           <ul>
             <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
@@ -338,8 +351,11 @@
         <img src="images/uch.png" alt="United Coffee House" class="company-logo">
         <div class="content-text">
           <div class="header-row">
-            <div><div class="role-title">Growth Intern</div><div class="company">The United Coffee House</div></div>
-            <div class="date">Delhi, India • Mar 2024</div>
+            <div>
+                <div class="role-title">Growth Intern</div>
+                <div class="company">The United Coffee House</div>
+            </div>
+            <div class="date">DELHI, INDIA • MAR 2024</div>
           </div>
           <ul>
             <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by <span class="stat-highlight">30%</span> in Chandigarh.</li>
@@ -353,8 +369,11 @@
          <img src="images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
          <div class="content-text">
           <div class="header-row">
-            <div><div class="role-title">Sales and Marketing Intern</div><div class="company">Mr. Moustaches Cakes</div></div>
-            <div class="date">Gurugram, India • Jun 2023 - Jul 2023</div>
+            <div>
+                <div class="role-title">Sales and Marketing Intern</div>
+                <div class="company">Mr. Moustaches Cakes</div>
+            </div>
+            <div class="date">GURUGRAM, INDIA • JUN 2023 - JUL 2023</div>
           </div>
           <ul>
             <li>Expanded corporate client sales by <span class="stat-highlight">15%</span> by acquiring new accounts through outreach and referral-based leads.</li>
@@ -373,8 +392,11 @@
             <img src="images/maia.png" alt="MAIA" class="company-logo">
             <div class="content-text">
                 <div class="header-row">
-                    <div><div class="role-title">Project Member, Entertainment Dept.</div><div class="company">USC MAIA</div></div>
-                    <div class="date">Sept 2025 - Present</div>
+                    <div>
+                        <div class="role-title">Project Member, Entertainment Dept.</div>
+                        <div class="company">USC MAIA</div>
+                    </div>
+                    <div class="date">LOS ANGELES, CA • SEPT 2025 - PRESENT</div>
                 </div>
                 <ul>
                     <li>Collaborating to develop a backend system for a music-intelligence platform using FastAPI, Supabase, Redis.</li>
@@ -390,8 +412,11 @@
             <img src="images/cloud.png" alt="USC Cloud" class="company-logo">
             <div class="content-text">
                 <div class="header-row">
-                    <div><div class="role-title">Member</div><div class="company">USC Cloud</div></div>
-                    <div class="date">Sept 2025 - Present</div>
+                    <div>
+                        <div class="role-title">Member</div>
+                        <div class="company">USC Cloud</div>
+                    </div>
+                    <div class="date">LOS ANGELES, CA • SEPT 2025 - PRESENT</div>
                 </div>
                 <ul>
                     <li>Pitched NFC chips & court experiences to the Crypto.com Arena VIP Tour team to raise revenue per guest by 50%.</li>
@@ -427,9 +452,11 @@
       <div class="project-card">
         <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" class="card-link">
             <div class="content-text">
-              <h3>Research Paper on Food Choices in Delhi NCR Workforce <i data-feather="external-link" style="width:16px; height:16px; vertical-align:middle; color:var(--primary);"></i></h3>
-              <div class="card-meta">Mar 2024 – Dec 2024</div>
-              <ul>
+              <div class="header-row" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
+                  <div><div class="role-title" style="color:#111;">Research Paper on Food Choices in Delhi NCR Workforce <i data-feather="external-link" style="width:16px; height:16px; vertical-align:middle; color:var(--primary);"></i></div></div>
+                  <div class="date">MAR 2024 – DEC 2024</div>
+              </div>
+              <ul style="margin-top:15px;">
                 <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design; presented findings at SigmaXi International Conference; awarded <span class="stat-highlight">CREST Gold</span> by the British Science Association.</li>
               </ul>
               <div class="tags">
