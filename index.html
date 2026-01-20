@@ -126,50 +126,79 @@
       background: var(--primary); bottom: -10px; left: 0; border-radius: 2px;
     }
 
-    /* --- TIMELINE (EXPERIENCE) --- */
-    .timeline { position: relative; border-left: 3px solid #e0e0e0; margin-left: 10px; padding-left: 40px; }
-    .timeline-item { position: relative; margin-bottom: 60px; }
-    .timeline-dot {
-      position: absolute; left: -52px; top: 5px; width: 20px; height: 20px;
-      background: var(--bg); border: 4px solid var(--secondary); border-radius: 50%; transition: 0.3s;
-    }
-    .timeline-item:hover .timeline-dot { background: var(--secondary); box-shadow: 0 0 0 6px rgba(141, 182, 0, 0.2); }
-
-    .timeline-content, .leadership-card {
-      background: var(--surface); padding: 30px; border-radius: var(--radius);
-      box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
-      display: flex; gap: 25px; align-items: flex-start;
-    }
-    .timeline-item:hover .timeline-content, .leadership-card:hover {
-      transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2);
+    /* --- LIST LAYOUT (Used for Experience & Leadership) --- */
+    /* This replaces the old timeline structure with a clean Logo-Left layout */
+    .list-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 40px; /* Space between items */
     }
 
-    /* --- UPDATED LOGO STYLE (TRANSPARENT) --- */
+    .list-item {
+      background: var(--surface);
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: 0.3s;
+      display: flex;
+      gap: 30px; /* Space between Logo and Text */
+      align-items: flex-start;
+    }
+
+    .list-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(255, 153, 51, 0.2);
+    }
+
+    /* UPDATED LOGO STYLE (Matches reference image) */
     .company-logo {
-      width: 70px; 
-      height: 70px; 
+      width: 85px; /* Larger size */
+      height: 85px; 
       object-fit: contain; 
       flex-shrink: 0;
-      /* Background and border removed so transparency works */
+      /* No background, no border -> Just the image */
+      background: transparent;
+      border: none;
     }
 
     .content-text { flex: 1; }
+    
     .header-row {
       display: flex; justify-content: space-between; flex-wrap: wrap;
       margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;
     }
-    .role-title { font-size: 18px; font-weight: 700; color: #111; }
-    .company { font-weight: 600; color: var(--primary); font-size: 16px; margin-top:4px; }
-    .date { font-size: 14px; color: var(--text-muted); font-weight: 600; }
+    
+    .role-title { 
+      font-size: 20px; 
+      font-weight: 700; 
+      color: var(--primary); /* Highlighted Title like reference */
+      line-height: 1.2;
+    }
+    
+    .company { 
+      font-weight: 600; 
+      color: #111; 
+      font-size: 16px; 
+      margin-top: 4px; 
+    }
+    
+    .date { 
+      font-size: 14px; 
+      color: var(--text-muted); 
+      font-weight: 600; 
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
     ul { margin: 0; padding-left: 18px; }
-    li { margin-bottom: 10px; color: #555; font-size: 15px; }
+    li { margin-bottom: 10px; color: #555; font-size: 15px; line-height: 1.7; }
 
     .stat-highlight {
       color: var(--primary); font-weight: 800; background: rgba(255, 153, 51, 0.1);
       padding: 0 4px; border-radius: 4px;
     }
-
-    .vertical-stack { display: flex; flex-direction: column; gap: 30px; }
 
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
     .tag {
@@ -179,6 +208,7 @@
     .tag.tech { background: rgba(141, 182, 0, 0.1); color: var(--secondary); }
     .tag.biz { background: rgba(255, 153, 51, 0.1); color: var(--primary); }
 
+    /* --- PROJECTS (Vertical Full Width) --- */
     .project-card {
       background: var(--surface); border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03);
@@ -189,35 +219,19 @@
     .project-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); margin-top: 0;}
     .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
 
-    /* --- SKILLS GRID (Rectangular) --- */
+    /* --- SKILLS GRID --- */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 20px;
     }
-    
     .skill-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      height: 100%;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 30px 20px; text-align: center; transition: 0.3s; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 15px; height: 100%;
     }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: var(--shadow-hover);
-    }
-    
+    .skill-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: var(--shadow-hover); }
     .skill-card svg { color: var(--primary); width: 40px; height: 40px; }
     .skill-name { font-weight: 700; font-size: 15px; color: var(--text-main); margin: 0; }
 
@@ -248,13 +262,13 @@
     @media (max-width: 900px) {
       .hero h1 { font-size: 42px; }
       .nav-links { display: none; }
-      .timeline { padding-left: 20px; margin-left: 0; }
-      .timeline-dot { left: -29px; width: 15px; height: 15px; border-width: 3px; }
       .form-grid { grid-template-columns: 1fr; }
       .header-row { flex-direction: column; gap: 4px; }
       .date { text-align: left; margin-bottom: 8px; }
-      .timeline-content, .leadership-card { flex-direction: column; gap: 15px; }
-      .company-logo { width: 60px; height: 60px; }
+      /* Stack on mobile */
+      .list-item { flex-direction: column; gap: 15px; align-items: center; text-align: center;}
+      .header-row { justify-content: center; }
+      .company-logo { width: 70px; height: 70px; }
       .nav-actions { margin-left: auto; }
       .nav-actions .icon-btn { display: none; }
       .skills-grid { grid-template-columns: 1fr 1fr; } 
@@ -288,76 +302,64 @@
 
   <section id="experience">
     <h2 class="section-title">Experience</h2>
-    <div class="timeline">
+    <div class="list-stack">
       
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <img src="images/nexedge.png" alt="Nexedge Capital" class="company-logo">
-          <div class="content-text">
-            <div class="header-row">
-              <div><div class="role-title">Business Analyst Intern</div><div class="company">Nexedge Capital</div></div>
-              <div class="date">Delhi, India • Dec 2025 - Jan 2026</div>
-            </div>
-            <ul>
-              <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving <span class="stat-highlight">2,500+ hours per quarter</span> in overall manual efforts.</li>
-              <li>Designed a <span class="stat-highlight">SQL-based workflow</span> to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
-            </ul>
+      <div class="list-item">
+        <img src="images/nexedge.png" alt="Nexedge Capital" class="company-logo">
+        <div class="content-text">
+          <div class="header-row">
+            <div><div class="role-title">Business Analyst Intern</div><div class="company">Nexedge Capital</div></div>
+            <div class="date">Delhi, India • Dec 2025 - Jan 2026</div>
           </div>
+          <ul>
+            <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving <span class="stat-highlight">2,500+ hours per quarter</span> in overall manual efforts.</li>
+            <li>Designed a <span class="stat-highlight">SQL-based workflow</span> to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <img src="images/ayurmeals.png" alt="AyurMeals" class="company-logo">
-          <div class="content-text">
-            <div class="header-row">
-              <div><div class="role-title">Founder</div><div class="company">AyurMeals</div></div>
-              <div class="date">Delhi, India • Jun 2023 - Jun 2025</div>
-            </div>
-            <ul>
-              <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
-              <li>Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in <span class="stat-highlight">Times of India (Nov ’24)</span>.</li>
-              <li>Launched AyurMeals' inspired dish in 10 govt. schools in partnership with <span class="stat-highlight">Akshay Patra</span>. Endorsed by the Govt. of India.</li>
-              <li>Shortlisted among 600 students for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge.</li>
-            </ul>
+      <div class="list-item">
+        <img src="images/ayurmeals.png" alt="AyurMeals" class="company-logo">
+        <div class="content-text">
+          <div class="header-row">
+            <div><div class="role-title">Founder</div><div class="company">AyurMeals</div></div>
+            <div class="date">Delhi, India • Jun 2023 - Jun 2025</div>
           </div>
+          <ul>
+            <li>Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</li>
+            <li>Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in <span class="stat-highlight">Times of India (Nov ’24)</span> for modernizing wisdom of Ayurveda.</li>
+            <li>Launched AyurMeals' inspired dish in 10 govt. schools in partnership with <span class="stat-highlight">Akshay Patra</span>, the largest midday meal provider in India. Endorsed by the Govt. of India for impacting public health and refining preventive healthcare.</li>
+            <li>Shortlisted among 600 students from school for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge, for exceptional analytical skills and in-depth knowledge of the business.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <img src="images/uch.png" alt="United Coffee House" class="company-logo">
-          <div class="content-text">
-            <div class="header-row">
-              <div><div class="role-title">Growth Intern</div><div class="company">The United Coffee House</div></div>
-              <div class="date">Delhi, India • Mar 2024</div>
-            </div>
-            <ul>
-              <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by <span class="stat-highlight">30%</span> in Chandigarh.</li>
-              <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork & customer experience.</li>
-              <li>Ideated and scripted 10+ reels, leading to a <span class="stat-highlight">20% increase</span> in customer engagement on social media platforms.</li>
-            </ul>
+      <div class="list-item">
+        <img src="images/uch.png" alt="United Coffee House" class="company-logo">
+        <div class="content-text">
+          <div class="header-row">
+            <div><div class="role-title">Growth Intern</div><div class="company">The United Coffee House</div></div>
+            <div class="date">Delhi, India • Mar 2024</div>
           </div>
+          <ul>
+            <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by <span class="stat-highlight">30%</span> in Chandigarh.</li>
+            <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork & customer experience.</li>
+            <li>Ideated and scripted 10+ reels, leading to a <span class="stat-highlight">20% increase</span> in customer engagement on social media platforms.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-           <img src="images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
-           <div class="content-text">
-            <div class="header-row">
-              <div><div class="role-title">Sales and Marketing Intern</div><div class="company">Mr. Moustaches Cakes</div></div>
-              <div class="date">Gurugram, India • Jun 2023 - Jul 2023</div>
-            </div>
-            <ul>
-              <li>Expanded corporate client sales by <span class="stat-highlight">15%</span> by acquiring new accounts through outreach and referral-based leads.</li>
-              <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery & retaining key clients.</li>
-            </ul>
+      <div class="list-item">
+         <img src="images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
+         <div class="content-text">
+          <div class="header-row">
+            <div><div class="role-title">Sales and Marketing Intern</div><div class="company">Mr. Moustaches Cakes</div></div>
+            <div class="date">Gurugram, India • Jun 2023 - Jul 2023</div>
           </div>
+          <ul>
+            <li>Expanded corporate client sales by <span class="stat-highlight">15%</span> by acquiring new accounts through outreach and referral-based leads.</li>
+            <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery & retaining key clients.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -365,13 +367,15 @@
 
   <section id="leadership">
     <h2 class="section-title">Leadership & Involvement</h2>
-    <div class="vertical-stack">
+    <div class="list-stack">
         
-        <div class="leadership-card">
+        <div class="list-item">
             <img src="images/maia.png" alt="MAIA" class="company-logo">
             <div class="content-text">
-                <h3>USC Marshall Artificial Intelligence Association (MAIA)</h3>
-                <div class="card-meta">Project Member, Entertainment Dept. • Sept 2025 - Present</div>
+                <div class="header-row">
+                    <div><div class="role-title">Project Member, Entertainment Dept.</div><div class="company">USC MAIA</div></div>
+                    <div class="date">Sept 2025 - Present</div>
+                </div>
                 <ul>
                     <li>Collaborating to develop a backend system for a music-intelligence platform using FastAPI, Supabase, Redis.</li>
                     <li>Developing a task-based recommender using Apple Music previews, Librosa analysis, and similarity modeling.</li>
@@ -382,11 +386,13 @@
             </div>
         </div>
 
-        <div class="leadership-card">
+        <div class="list-item">
             <img src="images/cloud.png" alt="USC Cloud" class="company-logo">
             <div class="content-text">
-                <h3>USC Cloud</h3>
-                <div class="card-meta">Member • Sept 2025 - Present</div>
+                <div class="header-row">
+                    <div><div class="role-title">Member</div><div class="company">USC Cloud</div></div>
+                    <div class="date">Sept 2025 - Present</div>
+                </div>
                 <ul>
                     <li>Pitched NFC chips & court experiences to the Crypto.com Arena VIP Tour team to raise revenue per guest by 50%.</li>
                     <li>Proposed influencer tours, hero reels, and travel-platform partnerships to the Tour team, expected to 5x revenue.</li>
@@ -402,53 +408,22 @@
   <section id="skills">
     <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
-      <div class="skill-card">
-        <i data-feather="grid"></i>
-        <h3 class="skill-name">Excel</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="database"></i>
-        <h3 class="skill-name">SQL</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="code"></i>
-        <h3 class="skill-name">Python</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="terminal"></i>
-        <h3 class="skill-name">Prompt Engineering</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="bar-chart-2"></i>
-        <h3 class="skill-name">Data Analysis</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="clipboard"></i>
-        <h3 class="skill-name">Project Management</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="pie-chart"></i>
-        <h3 class="skill-name">Business Intelligence</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="compass"></i>
-        <h3 class="skill-name">Strategy</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="users"></i>
-        <h3 class="skill-name">Stakeholders Communication</h3>
-      </div>
-      <div class="skill-card">
-        <i data-feather="check-square"></i>
-        <h3 class="skill-name">Project Execution</h3>
-      </div>
+      <div class="skill-card"><i data-feather="grid"></i><h3 class="skill-name">Excel</h3></div>
+      <div class="skill-card"><i data-feather="database"></i><h3 class="skill-name">SQL</h3></div>
+      <div class="skill-card"><i data-feather="code"></i><h3 class="skill-name">Python</h3></div>
+      <div class="skill-card"><i data-feather="terminal"></i><h3 class="skill-name">Prompt Engineering</h3></div>
+      <div class="skill-card"><i data-feather="bar-chart-2"></i><h3 class="skill-name">Data Analysis</h3></div>
+      <div class="skill-card"><i data-feather="clipboard"></i><h3 class="skill-name">Project Management</h3></div>
+      <div class="skill-card"><i data-feather="pie-chart"></i><h3 class="skill-name">Business Intelligence</h3></div>
+      <div class="skill-card"><i data-feather="compass"></i><h3 class="skill-name">Strategy</h3></div>
+      <div class="skill-card"><i data-feather="users"></i><h3 class="skill-name">Stakeholders Communication</h3></div>
+      <div class="skill-card"><i data-feather="check-square"></i><h3 class="skill-name">Project Execution</h3></div>
     </div>
   </section>
 
   <section id="projects">
     <h2 class="section-title">Projects</h2>
-    <div class="vertical-stack">
-      
+    <div class="list-stack">
       <div class="project-card">
         <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" class="card-link">
             <div class="content-text">
@@ -463,7 +438,6 @@
             </div>
         </a>
       </div>
-
     </div>
   </section>
 
