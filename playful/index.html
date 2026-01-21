@@ -46,7 +46,6 @@
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.7;
-      /* Subtle grain or texture could go here, but keeping it clean */
     }
 
     /* Headings in Playfair Display */
@@ -243,7 +242,8 @@
       line-height: 1.9;
       padding-right: 10px;
       font-family: 'Playfair Display', serif; /* Using Playfair for these impactful points */
-      font-style: italic;
+      /* Removed italics as requested */
+      font-style: normal; 
     }
 
     .slide-nav-btn {
@@ -667,7 +667,7 @@
   <script>
     feather.replace();
     document.getElementById('year').textContent = new Date().getFullYear();
-    const text = ["USC Student.", "Problem Solver.", "Curious Learner."];
+    const text = ["Curious Learner.", "Traveler.", "Problem Solver."];
     let count = 0; let index = 0; let currentText = ""; let letter = "";
     (function type() {
       if (count === text.length) { count = 0; }
