@@ -14,14 +14,13 @@
 
   <style>
     :root {
-      /* AyurMeals Specific Palette */
       --primary: #ff9933;    /* AyurMeals Saffron */
       --secondary: #8db600;  /* AyurMeals Green */
       --bg: #fffbf5;         /* Warm Cream Background */
       --surface: #ffffff;    /* Pure White Cards */
       --text-main: #2d3436;  
       --text-muted: #636e72; 
-      --border: #f0e6d2;     /* Warm border color */
+      --border: #f0e6d2;     
       
       --shadow: 0 10px 40px -10px rgba(255, 153, 51, 0.1);
       --shadow-hover: 0 20px 60px -15px rgba(255, 153, 51, 0.2);
@@ -31,7 +30,6 @@
     }
 
     * { box-sizing: border-box; }
-    
     html { scroll-behavior: smooth; }
 
     body {
@@ -46,48 +44,25 @@
       opacity: 0.99;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      color: #111;
-    }
-
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; margin: 0; color: #111; }
     a { text-decoration: none; color: inherit; transition: 0.2s; }
-    ul { margin: 0; padding-left: 20px; }
+    ul { margin: 0; padding-left: 18px; }
 
     /* --- NAVIGATION --- */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(255, 251, 245, 0.95);
-      backdrop-filter: blur(12px);
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      padding: 12px 0;
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255, 251, 245, 0.95); backdrop-filter: blur(12px);
+      z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 12px 0;
     }
-    
     .nav-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
-    .logo {
-      font-weight: 800;
-      font-size: 20px;
-      font-family: 'Poppins', sans-serif;
-      color: #111;
-      display: flex; align-items: center; gap: 6px;
-    }
+    .logo { font-weight: 800; font-size: 20px; font-family: 'Poppins', sans-serif; color: #111; display: flex; align-items: center; gap: 6px; }
     .logo span { color: var(--primary); }
-
     .nav-links { display: flex; gap: 25px; align-items: center; }
     .nav-links a { font-size: 14px; font-weight: 600; color: var(--text-muted); }
     .nav-links a:hover { color: var(--primary); }
-
     .nav-actions { display: flex; align-items: center; gap: 12px; }
     .icon-btn {
       width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border);
@@ -95,7 +70,6 @@
       color: var(--text-muted); background: white;
     }
     .icon-btn:hover { border-color: var(--secondary); color: var(--secondary); }
-    
     .btn-connect {
       background-color: var(--primary); color: white !important; padding: 8px 18px;
       border-radius: 50px; font-size: 13px; font-weight: 700;
@@ -103,138 +77,182 @@
     }
     .btn-connect:hover { background-color: #e68a2e; transform: translateY(-2px); }
 
-    /* --- HERO --- */
+    /* --- HERO LAYOUT --- */
     .hero {
-      padding: 160px 24px 80px; max-width: var(--max-width); margin: 0 auto; text-align: center;
+      min-height: 95vh; /* Pushes About Me below the fold */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      padding: 100px 24px 40px; 
+      max-width: 1100px; 
+      margin: 0 auto;
     }
-    .hero-hello {
-      color: var(--secondary); font-weight: 700; text-transform: uppercase;
-      letter-spacing: 2px; font-size: 14px; margin-bottom: 16px; display: block;
+
+    .hero-title {
+      font-size: 52px;
+      line-height: 1.1;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+      letter-spacing: -1.5px;
+      color: #111;
     }
-    .hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-    .typewriter { color: var(--primary); border-right: 3px solid var(--primary); animation: blink 0.75s step-end infinite; }
-    @keyframes blink { 50% { border-color: transparent; } }
-    .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8; }
+    
+    .typewriter {
+      color: var(--primary); 
+      display: inline-block;
+    }
+
+    /* Split Content: Text Left, Image Right */
+    .hero-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 60px; 
+      text-align: left;
+    }
+
+    .hero-text {
+      flex: 1;
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      padding-top: 10px; 
+    }
+
+    .highlight-text { color: var(--primary); font-weight: 700; }
+    .highlight-green { color: var(--secondary); font-weight: 700; }
+
+    /* Learn More Menu */
+    .learn-more-container {
+        margin-top: 30px;
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+    }
+    .learn-more-label {
+        font-size: 12px; font-weight: 700; text-transform: uppercase;
+        color: var(--secondary); margin-bottom: 12px; display: block; letter-spacing: 1px;
+    }
+    .learn-more-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .learn-more-links a { font-weight: 700; font-size: 15px; color: #111; position: relative; }
+    .learn-more-links a:hover { color: var(--primary); }
+    .learn-more-links a::after {
+        content: ''; position: absolute; width: 0; height: 2px;
+        bottom: -4px; left: 0; background-color: var(--primary); transition: width 0.3s;
+    }
+    .learn-more-links a:hover::after { width: 100%; }
+
+    .hero-image-wrapper {
+      flex-shrink: 0;
+      width: 280px; height: 350px; 
+      border-radius: 20px; overflow: hidden;
+      box-shadow: 20px 20px 0px rgba(255, 153, 51, 0.15); 
+      border: 1px solid var(--border);
+    }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* --- ABOUT ME SECTION --- */
+    #about-me {
+        background-color: rgba(255, 255, 255, 0.6); 
+        border-radius: var(--radius);
+        margin-bottom: 40px;
+        scroll-margin-top: 100px; /* FIX: Prevents Navbar overlap */
+    }
+    
+    .about-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        margin-top: 40px;
+    }
+
+    .about-image-wrapper {
+        flex-shrink: 0;
+        width: 320px;
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: #e0e0e0; 
+        display: flex; align-items: center; justify-content: center;
+        border: 1px solid var(--border);
+    }
+    
+    .about-img {
+        width: 100%; height: 100%; object-fit: cover; opacity: 0.6; 
+    }
+
+    .about-text {
+        flex: 1;
+        font-size: 16px;
+        color: var(--text-main);
+        line-height: 1.8;
+    }
+    .about-text p { margin-bottom: 20px; }
+
 
     /* --- COMMON SECTIONS --- */
-    section { padding: 80px 24px; max-width: var(--max-width); margin: 0 auto; }
-    .section-title {
-      font-size: 32px; margin-bottom: 60px; position: relative; display: inline-block;
+    section:not(.hero) { 
+        padding: 40px 24px; /* Tight padding as requested */
+        max-width: var(--max-width); 
+        margin: 0 auto;
+        scroll-margin-top: 100px; /* FIX: Stops scroll before header covers title */
     }
+    
+    .section-title {
+      font-size: 32px; margin-bottom: 20px; position: relative; display: inline-block;
+    }
+    
+    .center-title {
+        text-align: center; display: block; margin-bottom: 40px;
+    }
+    .center-title::after {
+        content: ''; position: absolute; width: 60px; height: 4px;
+        background: var(--primary); bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px;
+    }
+    
     .section-title::after {
       content: ''; position: absolute; width: 60%; height: 4px;
       background: var(--primary); bottom: -10px; left: 0; border-radius: 2px;
     }
 
-    /* --- LIST LAYOUT (Experience & Leadership) --- */
-    .list-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 40px; 
-    }
-
+    /* --- LIST LAYOUT --- */
+    .list-stack { display: flex; flex-direction: column; gap: 40px; }
     .list-item {
-      background: var(--surface);
-      padding: 35px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.03);
-      transition: 0.3s;
-      display: flex;
-      gap: 30px; 
-      align-items: flex-start;
+      background: var(--surface); padding: 35px; border-radius: var(--radius);
+      box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
+      display: flex; gap: 30px; align-items: flex-start;
     }
-
-    .list-item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(255, 153, 51, 0.2);
-    }
-
-    /* LOGO STYLE */
+    .list-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
     .company-logo {
-      width: 85px; 
-      height: 85px; 
-      object-fit: contain; 
-      flex-shrink: 0;
-      background: transparent;
-      border: none;
+      width: 85px; height: 85px; object-fit: contain; flex-shrink: 0;
+      background: transparent; border: none;
     }
-
     .content-text { flex: 1; width: 100%; }
-    
-    /* HEADER LAYOUT */
-    .header-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 4px; /* Space between rows */
-      margin-bottom: 18px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 18px;
-    }
-
-    .header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
-
-    /* ROW 1: Company + Location */
-    .company { 
-      font-size: 18px; 
-      font-weight: 700; 
-      color: #111; 
-      margin: 0;
-    }
-    .location {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* ROW 2: Role + Date */
-    .role-title { 
-      font-size: 16px; 
-      font-weight: 600; 
-      color: var(--primary); /* Orange */
-      margin: 0;
-    }
-    .date { 
-      font-size: 13px; 
-      font-weight: 600; 
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    ul { margin: 0; padding-left: 18px; }
+    .header-stack { display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px; border-bottom: 1px solid #eee; padding-bottom: 18px; }
+    .header-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .company { font-size: 18px; font-weight: 700; color: #111; margin: 0; }
+    .location { font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .role-title { font-size: 16px; font-weight: 600; color: var(--primary); margin: 0; }
+    .date { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
     li { margin-bottom: 10px; color: #555; font-size: 15px; line-height: 1.7; }
 
     /* --- PROJECTS --- */
     .project-card {
       background: var(--surface); border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03);
-      width: 100%;
+      box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03); width: 100%;
     }
     .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
     .card-link { text-decoration: none; color: inherit; display: block; height: 100%; padding: 30px; }
-    .project-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); margin-top: 0;}
-    .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
+    .project-viewer {
+      position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #f0f0f0; border-top: 1px solid var(--border);
+    }
+    .project-viewer iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
     /* --- SKILLS GRID --- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
     .skill-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
       padding: 30px 20px; text-align: center; transition: 0.3s; box-shadow: var(--shadow);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 15px; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; height: 100%;
     }
     .skill-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: var(--shadow-hover); }
     .skill-card svg { color: var(--primary); width: 40px; height: 40px; }
@@ -243,8 +261,7 @@
     /* --- CONTACT --- */
     .contact-container {
       background: linear-gradient(135deg, var(--surface) 0%, #fffbf5 100%);
-      padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow);
-      border: 1px solid var(--primary); max-width: 800px; margin: 0 auto;
+      padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--primary); max-width: 800px; margin: 0 auto;
     }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
     .form-group { display: flex; flex-direction: column; gap: 8px; }
@@ -257,18 +274,22 @@
     .form-group textarea { min-height: 120px; resize: vertical; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1); }
     .submit-btn {
-      background: var(--primary); color: white; border: none; padding: 14px 28px;
-      border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px; transition: 0.2s;
+      background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px; transition: 0.2s;
     }
     .submit-btn:hover { background: #e68a2e; transform: translateY(-2px); }
 
     footer { text-align: center; padding: 50px 0; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 60px; }
 
     @media (max-width: 900px) {
-      .hero h1 { font-size: 42px; }
+      .hero { min-height: auto; padding: 120px 24px 60px; }
+      .hero-title { font-size: 36px; text-align: center; margin-bottom: 40px;}
+      .hero-content { flex-direction: column-reverse; text-align: center; gap: 30px;} 
+      .about-content { flex-direction: column; align-items: center; }
+      .about-image-wrapper { width: 100%; max-width: 300px; height: 380px; }
+      .hero-image-wrapper { width: 220px; height: 280px; margin: 0 auto; }
+      .learn-more-links { justify-content: center; } 
       .nav-links { display: none; }
       .form-grid { grid-template-columns: 1fr; }
-      /* Mobile Stacking */
       .header-row { flex-direction: column; gap: 4px; align-items: flex-start; }
       .list-item { flex-direction: column; gap: 15px; align-items: center; text-align: left;}
       .company-logo { width: 70px; height: 70px; }
@@ -284,26 +305,82 @@
     <div class="nav-container">
       <div class="logo">Shivansh<span>.</span></div>
       <div class="nav-links">
+        <a href="#about-me">About</a>
         <a href="#experience">Experience</a>
         <a href="#leadership">Leadership</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
       </div>
       <div class="nav-actions">
-        <a href="https://www.linkedin.com/in/-shivanshgupta" target="_blank" class="icon-btn" aria-label="LinkedIn"><i data-feather="linkedin" style="width:18px; height:18px;"></i></a>
-        <a href="mailto:shivansh@usc.edu" class="icon-btn" aria-label="Gmail"><i data-feather="mail" style="width:18px; height:18px;"></i></a>
+        <a href="https://www.linkedin.com/in/-shivanshgupta" target="_blank" class="icon-btn"><i data-feather="linkedin"></i></a>
+        <a href="mailto:shivansh@usc.edu" class="icon-btn"><i data-feather="mail"></i></a>
         <a href="#contact" class="btn-connect">Let's Connect</a>
       </div>
     </div>
   </nav>
 
-  <section class="hero" id="about">
-    <span class="hero-hello">Hello, I'm</span>
-    <h1>Shivansh Gupta<br><span class="typewriter" id="typing-text"></span></h1>
-    <p>
-      Pursuing <b>Artificial Intelligence for Business</b> at <b>USC</b>.<br><br>
-      I work at the <b>intersection of Business and Technology</b>, translating technical capabilities into practical business value.
-    </p>
+  <section class="hero" id="home">
+    <h1 class="hero-title">
+      hello, i'm shivansh gupta—<br>
+      a(n) <span class="typewriter" id="typing-text"></span> 🌙
+    </h1>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <p>
+          I'm pursuing <span class="highlight-text">Artificial Intelligence for Business</span> at <span class="highlight-text">USC</span>.
+        </p>
+        <p>
+          I work at the <span class="highlight-text">intersection of Business and Technology</span>, translating technical capabilities into practical business value.
+        </p>
+        <p>
+          I am also a foodie, love to play pickleball, and enjoy nature photography.
+        </p>
+        
+        <div class="learn-more-container">
+            <span class="learn-more-label">Learn more:</span>
+            <div class="learn-more-links">
+                <a href="#about-me">About me</a>
+                <a href="#experience">My Experiences</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="../images/headshot.png" alt="Shivansh Gupta" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+  <section id="about-me">
+    <h2 class="section-title center-title">about me</h2>
+    
+    <div class="about-content">
+        <div class="about-image-wrapper">
+           <img src="https://placehold.co/400x500?text=About+Image+Here" alt="About Me Placeholder" class="about-img">
+        </div>
+
+        <div class="about-text">
+            <p>
+                Hi, I’m <span class="highlight-text">Shivansh Gupta</span>. I’m studying <span class="highlight-text">AI for Business</span> at <span class="highlight-text">USC</span>.
+                I’m from New Delhi, India, and since childhood, I’ve always enjoyed problem-solving, which can be traced back to me figuring out how to run video games on a 10-year-old Office PC.
+            </p>
+            <p>
+                Before USC, I worked on modernizing the application of an ancient Indian Health Science, <span class="highlight-text">Ayurveda</span>, to help corporate workers manage their chronic conditions by providing them with tailored meal plans.
+            </p>
+            <p>
+                Since coming to USC, I’ve built a <span class="highlight-text">task-based music recommendation system</span> to promote student musicians, pitched revenue-growth solutions to <span class="highlight-text">Crypto.com Arena</span> for their VIP tours, and developed <span class="highlight-text">automation systems</span> for a wealth management fund that save over 2,500 hours per quarter and improve the scalability and stability of financial analysis.
+            </p>
+            <p>
+                I’m now looking to work in roles where I can apply technology to <span class="highlight-text">solve real business problems</span>.
+            </p>
+            <p>
+                In my free time, I enjoy <span class="highlight-green">Nature Photography</span>, playing sports like <span class="highlight-green">Table Tennis</span> or <span class="highlight-green">Pickleball</span>, and I’m currently learning how to <span class="highlight-green">dance</span>.
+            </p>
+        </div>
+    </div>
   </section>
 
   <section id="experience">
@@ -311,7 +388,7 @@
     <div class="list-stack">
       
       <div class="list-item">
-        <img src="images/nexedge.png" alt="Nexedge Capital" class="company-logo">
+        <img src="../images/nexedge.png" alt="Nexedge Capital" class="company-logo" style="width: 105px; height: 105px;">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -331,7 +408,7 @@
       </div>
 
       <div class="list-item">
-        <img src="images/ayurmeals.png" alt="AyurMeals" class="company-logo">
+        <img src="../images/ayurmeals.png" alt="AyurMeals" class="company-logo">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -353,7 +430,7 @@
       </div>
 
       <div class="list-item">
-        <img src="images/uch.png" alt="United Coffee House" class="company-logo">
+        <img src="../images/uch.png" alt="United Coffee House" class="company-logo">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -374,7 +451,7 @@
       </div>
 
       <div class="list-item">
-         <img src="images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
+         <img src="../images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
          <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -400,7 +477,7 @@
     <div class="list-stack">
         
         <div class="list-item">
-            <img src="images/maia.png" alt="MAIA" class="company-logo">
+            <img src="../images/maia.png" alt="MAIA" class="company-logo">
             <div class="content-text">
                 <div class="header-stack">
                     <div class="header-row">
@@ -420,7 +497,7 @@
         </div>
 
         <div class="list-item">
-            <img src="images/cloud.png" alt="USC Cloud" class="company-logo">
+            <img src="../images/cloud.png" alt="USC Cloud" class="company-logo">
             <div class="content-text">
                 <div class="header-stack">
                     <div class="header-row">
@@ -461,19 +538,29 @@
     <h2 class="section-title">Projects</h2>
     <div class="list-stack">
       <div class="project-card">
-        <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" class="card-link">
-            <div class="content-text">
-              <div class="header-stack" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
-                  <div class="header-row">
-                      <div class="company">Research Paper on Food Choices in Delhi NCR Workforce <i data-feather="external-link" style="width:16px; height:16px; vertical-align:middle; color:var(--primary);"></i></div>
-                      <div class="date">MAR 2024 – DEC 2024</div>
-                  </div>
+        
+        <div class="content-text" style="padding: 30px;">
+          <div class="header-stack" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
+              <div class="header-row">
+                  <div class="company">Research Paper on Food Choices in Delhi NCR Workforce</div>
+                  <div class="date">MAR 2024 – DEC 2024</div>
               </div>
-              <ul style="margin-top:15px;">
-                <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association.</li>
-              </ul>
-            </div>
-        </a>
+          </div>
+          <ul style="margin-top:15px;">
+            <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
+          </ul>
+          
+          <div style="margin-top: 20px; margin-bottom: 20px;">
+            <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-weight:700; color:#ff9933;">
+              <i data-feather="external-link" style="width:16px; height:16px;"></i> View Full PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="project-viewer">
+            <iframe src="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/preview" allow="autoplay"></iframe>
+        </div>
+
       </div>
     </div>
   </section>
