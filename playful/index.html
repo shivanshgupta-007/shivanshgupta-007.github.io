@@ -170,7 +170,7 @@
     /* NEW CSS FOR SLIDES */
     .project-viewer {
       position: relative; width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      background: #f0f0f0; border-bottom: 1px solid var(--border);
+      background: #f0f0f0; border-top: 1px solid var(--border); /* Changed to top border since it's now below text */
     }
     .project-viewer iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
@@ -255,7 +255,7 @@
     <div class="list-stack">
       
       <div class="list-item">
-        <img src="../images/nexedge.png" alt="Nexedge Capital" class="company-logo">
+        <img src="../images/nexedge.png" alt="Nexedge Capital" class="company-logo" style="width: 105px; height: 105px;">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -406,10 +406,6 @@
     <div class="list-stack">
       <div class="project-card">
         
-        <div class="project-viewer">
-            <iframe src="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/preview" allow="autoplay"></iframe>
-        </div>
-
         <div class="content-text" style="padding: 30px;">
           <div class="header-stack" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
               <div class="header-row">
@@ -421,12 +417,17 @@
             <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
           </ul>
           
-          <div style="margin-top: 20px;">
+          <div style="margin-top: 20px; margin-bottom: 20px;">
             <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-weight:700; color:#ff9933;">
               <i data-feather="external-link" style="width:16px; height:16px;"></i> View Full PDF
             </a>
           </div>
         </div>
+
+        <div class="project-viewer">
+            <iframe src="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/preview" allow="autoplay"></iframe>
+        </div>
+
       </div>
     </div>
   </section>
