@@ -77,10 +77,10 @@
     }
     .btn-connect:hover { background-color: #e68a2e; transform: translateY(-2px); }
 
-    /* --- HERO LAYOUT (UPDATED) --- */
+    /* --- HERO LAYOUT --- */
     .hero {
       padding: 140px 24px 80px;
-      max-width: 1100px; /* Expanded Width */
+      max-width: 1100px; 
       margin: 0 auto;
     }
 
@@ -99,88 +99,106 @@
       display: inline-block;
     }
 
-    /* Split Content: Text Left, Image Right */
     .hero-content {
       display: flex;
-      align-items: flex-start; /* Align top */
-      gap: 60px; /* More breathing room */
+      align-items: flex-start;
+      gap: 60px;
       text-align: left;
     }
 
-    /* Text Side (First in HTML for accessibility, but Left visually) */
     .hero-text {
       flex: 1;
       font-size: 18px;
       color: var(--text-muted);
       line-height: 1.8;
-      padding-top: 10px; /* Slight offset to align with image top */
+      padding-top: 10px;
     }
 
-    .highlight-text {
-      color: var(--primary);
-      font-weight: 700;
-    }
+    .highlight-text { color: var(--primary); font-weight: 700; }
+    .highlight-green { color: var(--secondary); font-weight: 700; }
 
-    /* New "Learn More" Menu */
+    /* Learn More Menu */
     .learn-more-container {
         margin-top: 30px;
         border-top: 1px solid var(--border);
         padding-top: 20px;
     }
     .learn-more-label {
-        font-size: 12px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--secondary); /* Green accent */
-        margin-bottom: 12px;
-        display: block;
-        letter-spacing: 1px;
+        font-size: 12px; font-weight: 700; text-transform: uppercase;
+        color: var(--secondary); margin-bottom: 12px; display: block; letter-spacing: 1px;
     }
-    .learn-more-links {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    .learn-more-links a {
-        font-weight: 700;
-        font-size: 15px;
-        color: #111;
-        position: relative;
-    }
-    .learn-more-links a:hover {
-        color: var(--primary);
-    }
-    /* Underline animation */
+    .learn-more-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .learn-more-links a { font-weight: 700; font-size: 15px; color: #111; position: relative; }
+    .learn-more-links a:hover { color: var(--primary); }
     .learn-more-links a::after {
         content: ''; position: absolute; width: 0; height: 2px;
-        bottom: -4px; left: 0; background-color: var(--primary);
-        transition: width 0.3s;
+        bottom: -4px; left: 0; background-color: var(--primary); transition: width 0.3s;
     }
     .learn-more-links a:hover::after { width: 100%; }
 
-
-    /* Image Wrapper (Right Side) */
     .hero-image-wrapper {
       flex-shrink: 0;
-      width: 280px;
-      height: 350px; 
-      border-radius: 20px;
-      overflow: hidden;
+      width: 280px; height: 350px; 
+      border-radius: 20px; overflow: hidden;
       box-shadow: 20px 20px 0px rgba(255, 153, 51, 0.15); 
       border: 1px solid var(--border);
     }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; }
 
-    .hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
+    /* --- ABOUT ME SECTION (NEW) --- */
+    #about-me {
+        background-color: rgba(255, 255, 255, 0.6); /* Slight background diff */
+        border-radius: var(--radius);
+        margin-bottom: 40px;
     }
+    
+    .about-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        margin-top: 40px;
+    }
+
+    .about-image-wrapper {
+        flex-shrink: 0;
+        width: 320px;
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        /* Placeholder grey background */
+        background-color: #e0e0e0; 
+        display: flex; align-items: center; justify-content: center;
+        border: 1px solid var(--border);
+    }
+    
+    .about-img {
+        width: 100%; height: 100%; object-fit: cover; opacity: 0.6; /* Lower opacity for placeholder */
+    }
+
+    .about-text {
+        flex: 1;
+        font-size: 16px;
+        color: var(--text-main);
+        line-height: 1.8;
+    }
+    .about-text p { margin-bottom: 20px; }
+
 
     /* --- SECTIONS --- */
     section:not(.hero) { padding: 80px 24px; max-width: var(--max-width); margin: 0 auto; }
     .section-title {
-      font-size: 32px; margin-bottom: 60px; position: relative; display: inline-block;
+      font-size: 32px; margin-bottom: 20px; position: relative; display: inline-block;
     }
+    
+    /* Centered Title for About Me */
+    .center-title {
+        text-align: center; display: block; margin-bottom: 40px;
+    }
+    .center-title::after {
+        content: ''; position: absolute; width: 60px; height: 4px;
+        background: var(--primary); bottom: -10px; left: 50%; transform: translateX(-50%); border-radius: 2px;
+    }
+    
     .section-title::after {
       content: ''; position: absolute; width: 60%; height: 4px;
       background: var(--primary); bottom: -10px; left: 0; border-radius: 2px;
@@ -254,9 +272,11 @@
 
     @media (max-width: 900px) {
       .hero-title { font-size: 36px; text-align: center; margin-bottom: 40px;}
-      .hero-content { flex-direction: column-reverse; text-align: center; gap: 30px;} /* Text on bottom for mobile */
+      .hero-content { flex-direction: column-reverse; text-align: center; gap: 30px;} 
+      .about-content { flex-direction: column; align-items: center; }
+      .about-image-wrapper { width: 100%; max-width: 300px; height: 380px; }
       .hero-image-wrapper { width: 220px; height: 280px; margin: 0 auto; }
-      .learn-more-links { justify-content: center; } /* Center menu on mobile */
+      .learn-more-links { justify-content: center; } 
       .nav-links { display: none; }
       .form-grid { grid-template-columns: 1fr; }
       .header-row { flex-direction: column; gap: 4px; align-items: flex-start; }
@@ -274,6 +294,7 @@
     <div class="nav-container">
       <div class="logo">Shivansh<span>.</span></div>
       <div class="nav-links">
+        <a href="#about-me">About</a>
         <a href="#experience">Experience</a>
         <a href="#leadership">Leadership</a>
         <a href="#skills">Skills</a>
@@ -287,14 +308,13 @@
     </div>
   </nav>
 
-  <section class="hero" id="about">
+  <section class="hero" id="home">
     <h1 class="hero-title">
       hello, i'm shivansh gupta—<br>
       a(n) <span class="typewriter" id="typing-text"></span> 🌙
     </h1>
 
     <div class="hero-content">
-      
       <div class="hero-text">
         <p>
           I'm pursuing <span class="highlight-text">Artificial Intelligence for Business</span> at <span class="highlight-text">USC</span>.
@@ -309,7 +329,7 @@
         <div class="learn-more-container">
             <span class="learn-more-label">Learn more:</span>
             <div class="learn-more-links">
-                <a href="#about">About me</a>
+                <a href="#about-me">About me</a>
                 <a href="#experience">My Experiences</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
@@ -320,7 +340,35 @@
       <div class="hero-image-wrapper">
         <img src="../images/headshot.png" alt="Shivansh Gupta" class="hero-img">
       </div>
+    </div>
+  </section>
 
+  <section id="about-me">
+    <h2 class="section-title center-title">about me</h2>
+    
+    <div class="about-content">
+        <div class="about-image-wrapper">
+           <img src="https://placehold.co/400x500?text=About+Image+Here" alt="About Me Placeholder" class="about-img">
+        </div>
+
+        <div class="about-text">
+            <p>
+                Hi, I’m <span class="highlight-text">Shivansh Gupta</span>. I’m studying <span class="highlight-text">AI for Business</span> at <span class="highlight-text">USC</span>.
+                I’m from New Delhi, India, and since childhood, I’ve always enjoyed problem-solving, which can be traced back to me figuring out how to run video games on a 10-year-old Office PC.
+            </p>
+            <p>
+                Before USC, I worked on modernizing the application of an ancient Indian Health Science, <span class="highlight-text">Ayurveda</span>, to help corporate workers manage their chronic conditions by providing them with tailored meal plans.
+            </p>
+            <p>
+                Since coming to USC, I’ve built a <span class="highlight-text">task-based music recommendation system</span> to promote student musicians, pitched revenue-growth solutions to <span class="highlight-text">Crypto.com Arena</span> for their VIP tours, and developed <span class="highlight-text">automation systems</span> for a wealth management fund that save over 2,500 hours per quarter and improve the scalability and stability of financial analysis.
+            </p>
+            <p>
+                I’m now looking to work in roles where I can apply technology to <span class="highlight-text">solve real business problems</span>.
+            </p>
+            <p>
+                In my free time, I enjoy <span class="highlight-green">Nature Photography</span>, playing sports like <span class="highlight-green">Table Tennis</span> or <span class="highlight-green">Pickleball</span>, and I’m currently learning how to <span class="highlight-green">dance</span>.
+            </p>
+        </div>
     </div>
   </section>
 
