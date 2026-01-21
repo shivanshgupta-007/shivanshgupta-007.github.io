@@ -143,51 +143,58 @@
     .date { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
     li { margin-bottom: 10px; color: #555; font-size: 15px; line-height: 1.7; }
 
-    /* --- CUSTOM SLIDESHOW FOR AYURMEALS --- */
+    /* --- CUSTOM SLIDESHOW FOR AYURMEALS (BIG 50/50 LAYOUT) --- */
     .slideshow-container {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      min-height: 250px;
+      min-height: 320px; /* Increased height for content */
     }
+    
     .slide {
-      display: none; /* Hidden by default */
-      flex-direction: row;
-      align-items: center;
-      gap: 30px;
+      display: none; 
+      flex-direction: row; /* Side-by-side Layout */
+      align-items: center; /* Vertical Center */
+      justify-content: space-between;
+      gap: 40px; /* Gap between Image and Text */
       width: 100%;
-      animation: fadeIn 0.5s;
+      height: 100%;
+      animation: fadeIn 0.6s;
     }
-    .slide.active { display: flex; } /* Show active slide */
+    .slide.active { display: flex; }
     
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     .slide-image-box {
-      flex-shrink: 0;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%; /* Circle like reference, or use 12px for square */
-      border: 3px solid var(--secondary);
+      flex: 1; /* Takes 50% width */
+      height: 300px; /* Fixed height for rectangular look */
+      border-radius: var(--radius); /* Matches site aesthetics */
       overflow: hidden;
-      background: #fff;
-      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+      background: #f9f9f9;
     }
-    .slide-img-content { width: 100%; height: 100%; object-fit: cover; }
+    
+    .slide-img-content { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; /* Ensures image fills the rectangle */
+    }
     
     .slide-text {
-      flex: 1;
-      font-size: 15px;
-      color: #555;
-      line-height: 1.7;
-      padding-right: 20px;
+      flex: 1; /* Takes 50% width */
+      font-size: 16px;
+      color: var(--text-main);
+      line-height: 1.8;
+      padding-right: 10px;
     }
 
     .slide-nav-btn {
       background: none; border: none; cursor: pointer;
       color: var(--text-muted); transition: 0.2s;
       padding: 10px;
+      z-index: 2; /* Ensures arrows are clickable */
     }
     .slide-nav-btn:hover { color: var(--primary); transform: scale(1.2); }
 
@@ -243,7 +250,8 @@
       .hero-image-wrapper { width: 220px; height: 280px; margin: 0 auto; }
       
       /* Mobile Slideshow Fixes */
-      .slide { flex-direction: column; text-align: center; }
+      .slide { flex-direction: column; text-align: center; gap: 20px;}
+      .slide-image-box { width: 100%; height: 200px; }
       .slide-text { padding-right: 0; }
       .slideshow-container { gap: 10px; }
       
