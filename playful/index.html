@@ -77,14 +77,13 @@
     }
     .btn-connect:hover { background-color: #e68a2e; transform: translateY(-2px); }
 
-    /* --- NEW HERO LAYOUT --- */
+    /* --- HERO LAYOUT (UPDATED) --- */
     .hero {
       padding: 140px 24px 80px;
-      max-width: 900px;
+      max-width: 1100px; /* Expanded Width */
       margin: 0 auto;
     }
 
-    /* 1. The Big Headline */
     .hero-title {
       font-size: 52px;
       line-height: 1.1;
@@ -96,41 +95,25 @@
     }
     
     .typewriter {
-      color: var(--primary); /* Saffron Orange */
+      color: var(--primary); 
       display: inline-block;
     }
 
-    /* 2. The Split Content (Image Left, Text Right) */
+    /* Split Content: Text Left, Image Right */
     .hero-content {
       display: flex;
-      align-items: center; /* Center vertically */
-      gap: 50px;
+      align-items: flex-start; /* Align top */
+      gap: 60px; /* More breathing room */
       text-align: left;
     }
 
-    /* The Image Wrapper */
-    .hero-image-wrapper {
-      flex-shrink: 0;
-      width: 280px;
-      height: 350px; /* Rectangular portrait aspect ratio */
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 20px 20px 0px rgba(255, 153, 51, 0.15); /* Offset shadow for style */
-      border: 1px solid var(--border);
-    }
-
-    .hero-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures image fills box without stretching */
-    }
-
-    /* The Text Side */
+    /* Text Side (First in HTML for accessibility, but Left visually) */
     .hero-text {
       flex: 1;
       font-size: 18px;
       color: var(--text-muted);
       line-height: 1.8;
+      padding-top: 10px; /* Slight offset to align with image top */
     }
 
     .highlight-text {
@@ -138,17 +121,59 @@
       font-weight: 700;
     }
 
-    .connect-link {
-      display: inline-block;
-      margin-top: 15px;
-      color: var(--secondary);
-      font-weight: 700;
-      font-size: 18px;
-      border-bottom: 2px solid var(--secondary);
+    /* New "Learn More" Menu */
+    .learn-more-container {
+        margin-top: 30px;
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
     }
-    .connect-link:hover {
-      color: var(--primary);
-      border-color: var(--primary);
+    .learn-more-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--secondary); /* Green accent */
+        margin-bottom: 12px;
+        display: block;
+        letter-spacing: 1px;
+    }
+    .learn-more-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .learn-more-links a {
+        font-weight: 700;
+        font-size: 15px;
+        color: #111;
+        position: relative;
+    }
+    .learn-more-links a:hover {
+        color: var(--primary);
+    }
+    /* Underline animation */
+    .learn-more-links a::after {
+        content: ''; position: absolute; width: 0; height: 2px;
+        bottom: -4px; left: 0; background-color: var(--primary);
+        transition: width 0.3s;
+    }
+    .learn-more-links a:hover::after { width: 100%; }
+
+
+    /* Image Wrapper (Right Side) */
+    .hero-image-wrapper {
+      flex-shrink: 0;
+      width: 280px;
+      height: 350px; 
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 20px 20px 0px rgba(255, 153, 51, 0.15); 
+      border: 1px solid var(--border);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
     }
 
     /* --- SECTIONS --- */
@@ -229,8 +254,9 @@
 
     @media (max-width: 900px) {
       .hero-title { font-size: 36px; text-align: center; margin-bottom: 40px;}
-      .hero-content { flex-direction: column; text-align: center; gap: 30px;}
+      .hero-content { flex-direction: column-reverse; text-align: center; gap: 30px;} /* Text on bottom for mobile */
       .hero-image-wrapper { width: 220px; height: 280px; margin: 0 auto; }
+      .learn-more-links { justify-content: center; } /* Center menu on mobile */
       .nav-links { display: none; }
       .form-grid { grid-template-columns: 1fr; }
       .header-row { flex-direction: column; gap: 4px; align-items: flex-start; }
@@ -269,10 +295,6 @@
 
     <div class="hero-content">
       
-      <div class="hero-image-wrapper">
-        <img src="../images/headshot.png" alt="Shivansh Gupta" class="hero-img">
-      </div>
-
       <div class="hero-text">
         <p>
           I'm pursuing <span class="highlight-text">Artificial Intelligence for Business</span> at <span class="highlight-text">USC</span>.
@@ -283,7 +305,20 @@
         <p>
           I am also a foodie, love to play pickleball, and enjoy nature photography.
         </p>
-        <a href="#contact" class="connect-link">Let's connect! 🚀</a>
+        
+        <div class="learn-more-container">
+            <span class="learn-more-label">Learn more:</span>
+            <div class="learn-more-links">
+                <a href="#about">About me</a>
+                <a href="#experience">My Experiences</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+            </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="../images/headshot.png" alt="Shivansh Gupta" class="hero-img">
       </div>
 
     </div>
