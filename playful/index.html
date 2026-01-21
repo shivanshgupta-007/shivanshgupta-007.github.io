@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shivansh Gupta | Experimental</title>
+  <title>Shivansh Gupta | Portfolio</title>
   <meta name="description" content="Shivansh Gupta — AI for Business @ USC." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,14 +14,13 @@
 
   <style>
     :root {
-      /* AyurMeals Specific Palette */
       --primary: #ff9933;    /* AyurMeals Saffron */
       --secondary: #8db600;  /* AyurMeals Green */
       --bg: #fffbf5;         /* Warm Cream Background */
       --surface: #ffffff;    /* Pure White Cards */
       --text-main: #2d3436;  
       --text-muted: #636e72; 
-      --border: #f0e6d2;     /* Warm border color */
+      --border: #f0e6d2;     
       
       --shadow: 0 10px 40px -10px rgba(255, 153, 51, 0.1);
       --shadow-hover: 0 20px 60px -15px rgba(255, 153, 51, 0.2);
@@ -31,7 +30,6 @@
     }
 
     * { box-sizing: border-box; }
-    
     html { scroll-behavior: smooth; }
 
     body {
@@ -46,48 +44,25 @@
       opacity: 0.99;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      color: #111;
-    }
-
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; margin: 0; color: #111; }
     a { text-decoration: none; color: inherit; transition: 0.2s; }
-    ul { margin: 0; padding-left: 20px; }
+    ul { margin: 0; padding-left: 18px; }
 
     /* --- NAVIGATION --- */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: rgba(255, 251, 245, 0.95);
-      backdrop-filter: blur(12px);
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      padding: 12px 0;
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255, 251, 245, 0.95); backdrop-filter: blur(12px);
+      z-index: 100; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 12px 0;
     }
-    
     .nav-container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
-    .logo {
-      font-weight: 800;
-      font-size: 20px;
-      font-family: 'Poppins', sans-serif;
-      color: #111;
-      display: flex; align-items: center; gap: 6px;
-    }
+    .logo { font-weight: 800; font-size: 20px; font-family: 'Poppins', sans-serif; color: #111; display: flex; align-items: center; gap: 6px; }
     .logo span { color: var(--primary); }
-
     .nav-links { display: flex; gap: 25px; align-items: center; }
     .nav-links a { font-size: 14px; font-weight: 600; color: var(--text-muted); }
     .nav-links a:hover { color: var(--primary); }
-
     .nav-actions { display: flex; align-items: center; gap: 12px; }
     .icon-btn {
       width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border);
@@ -95,7 +70,6 @@
       color: var(--text-muted); background: white;
     }
     .icon-btn:hover { border-color: var(--secondary); color: var(--secondary); }
-    
     .btn-connect {
       background-color: var(--primary); color: white !important; padding: 8px 18px;
       border-radius: 50px; font-size: 13px; font-weight: 700;
@@ -103,21 +77,82 @@
     }
     .btn-connect:hover { background-color: #e68a2e; transform: translateY(-2px); }
 
-    /* --- HERO --- */
+    /* --- NEW HERO LAYOUT --- */
     .hero {
-      padding: 160px 24px 80px; max-width: var(--max-width); margin: 0 auto; text-align: center;
+      padding: 140px 24px 80px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .hero-hello {
-      color: var(--secondary); font-weight: 700; text-transform: uppercase;
-      letter-spacing: 2px; font-size: 14px; margin-bottom: 16px; display: block;
-    }
-    .hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
-    .typewriter { color: var(--primary); border-right: 3px solid var(--primary); animation: blink 0.75s step-end infinite; }
-    @keyframes blink { 50% { border-color: transparent; } }
-    .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8; }
 
-    /* --- COMMON SECTIONS --- */
-    section { padding: 80px 24px; max-width: var(--max-width); margin: 0 auto; }
+    /* 1. The Big Headline */
+    .hero-title {
+      font-size: 52px;
+      line-height: 1.1;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+      letter-spacing: -1.5px;
+      color: #111;
+    }
+    
+    .typewriter {
+      color: var(--primary); /* Saffron Orange */
+      display: inline-block;
+    }
+
+    /* 2. The Split Content (Image Left, Text Right) */
+    .hero-content {
+      display: flex;
+      align-items: center; /* Center vertically */
+      gap: 50px;
+      text-align: left;
+    }
+
+    /* The Image Wrapper */
+    .hero-image-wrapper {
+      flex-shrink: 0;
+      width: 280px;
+      height: 350px; /* Rectangular portrait aspect ratio */
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 20px 20px 0px rgba(255, 153, 51, 0.15); /* Offset shadow for style */
+      border: 1px solid var(--border);
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures image fills box without stretching */
+    }
+
+    /* The Text Side */
+    .hero-text {
+      flex: 1;
+      font-size: 18px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .highlight-text {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .connect-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 18px;
+      border-bottom: 2px solid var(--secondary);
+    }
+    .connect-link:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* --- SECTIONS --- */
+    section:not(.hero) { padding: 80px 24px; max-width: var(--max-width); margin: 0 auto; }
     .section-title {
       font-size: 32px; margin-bottom: 60px; position: relative; display: inline-block;
     }
@@ -126,51 +161,36 @@
       background: var(--primary); bottom: -10px; left: 0; border-radius: 2px;
     }
 
-    /* --- LIST LAYOUT (Experience & Leadership) --- */
+    /* --- LIST LAYOUT --- */
     .list-stack { display: flex; flex-direction: column; gap: 40px; }
-
     .list-item {
       background: var(--surface); padding: 35px; border-radius: var(--radius);
       box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
       display: flex; gap: 30px; align-items: flex-start;
     }
     .list-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
-
-    /* LOGO STYLE */
     .company-logo {
       width: 85px; height: 85px; object-fit: contain; flex-shrink: 0;
       background: transparent; border: none;
     }
-
     .content-text { flex: 1; width: 100%; }
-    
-    /* HEADER LAYOUT: Two Rows */
     .header-stack { display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px; border-bottom: 1px solid #eee; padding-bottom: 18px; }
     .header-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-
-    /* ROW 1: Company + Location */
     .company { font-size: 18px; font-weight: 700; color: #111; margin: 0; }
     .location { font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-
-    /* ROW 2: Role + Date */
     .role-title { font-size: 16px; font-weight: 600; color: var(--primary); margin: 0; }
     .date { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-    
-    ul { margin: 0; padding-left: 18px; }
     li { margin-bottom: 10px; color: #555; font-size: 15px; line-height: 1.7; }
 
-    /* --- PROJECTS & SLIDE VIEWER --- */
+    /* --- PROJECTS --- */
     .project-card {
       background: var(--surface); border-radius: var(--radius); overflow: hidden;
       box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03); width: 100%;
     }
     .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
-    .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
-
-    /* NEW CSS FOR SLIDES */
+    .card-link { text-decoration: none; color: inherit; display: block; height: 100%; padding: 30px; }
     .project-viewer {
-      position: relative; width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      background: #f0f0f0; border-top: 1px solid var(--border); /* Changed to top border since it's now below text */
+      position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #f0f0f0; border-top: 1px solid var(--border);
     }
     .project-viewer iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 
@@ -188,8 +208,7 @@
     /* --- CONTACT --- */
     .contact-container {
       background: linear-gradient(135deg, var(--surface) 0%, #fffbf5 100%);
-      padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow);
-      border: 1px solid var(--primary); max-width: 800px; margin: 0 auto;
+      padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--primary); max-width: 800px; margin: 0 auto;
     }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
     .form-group { display: flex; flex-direction: column; gap: 8px; }
@@ -202,15 +221,16 @@
     .form-group textarea { min-height: 120px; resize: vertical; }
     .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1); }
     .submit-btn {
-      background: var(--primary); color: white; border: none; padding: 14px 28px;
-      border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px; transition: 0.2s;
+      background: var(--primary); color: white; border: none; padding: 14px 28px; border-radius: 50px; font-weight: 700; font-size: 16px; cursor: pointer; width: 100%; margin-top: 10px; transition: 0.2s;
     }
     .submit-btn:hover { background: #e68a2e; transform: translateY(-2px); }
 
     footer { text-align: center; padding: 50px 0; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--border); margin-top: 60px; }
 
     @media (max-width: 900px) {
-      .hero h1 { font-size: 42px; }
+      .hero-title { font-size: 36px; text-align: center; margin-bottom: 40px;}
+      .hero-content { flex-direction: column; text-align: center; gap: 30px;}
+      .hero-image-wrapper { width: 220px; height: 280px; margin: 0 auto; }
       .nav-links { display: none; }
       .form-grid { grid-template-columns: 1fr; }
       .header-row { flex-direction: column; gap: 4px; align-items: flex-start; }
@@ -234,20 +254,39 @@
         <a href="#projects">Projects</a>
       </div>
       <div class="nav-actions">
-        <a href="https://www.linkedin.com/in/-shivanshgupta" target="_blank" class="icon-btn" aria-label="LinkedIn"><i data-feather="linkedin" style="width:18px; height:18px;"></i></a>
-        <a href="mailto:shivansh@usc.edu" class="icon-btn" aria-label="Gmail"><i data-feather="mail" style="width:18px; height:18px;"></i></a>
+        <a href="https://www.linkedin.com/in/-shivanshgupta" target="_blank" class="icon-btn"><i data-feather="linkedin"></i></a>
+        <a href="mailto:shivansh@usc.edu" class="icon-btn"><i data-feather="mail"></i></a>
         <a href="#contact" class="btn-connect">Let's Connect</a>
       </div>
     </div>
   </nav>
 
   <section class="hero" id="about">
-    <span class="hero-hello">Experimental Build</span>
-    <h1>Shivansh Gupta<br><span class="typewriter" id="typing-text"></span></h1>
-    <p>
-      Pursuing <b>Artificial Intelligence for Business</b> at <b>USC</b>.<br><br>
-      I work at the <b>intersection of Business and Technology</b>, translating technical capabilities into practical business value.
-    </p>
+    <h1 class="hero-title">
+      hello, i'm shivansh gupta—<br>
+      a(n) <span class="typewriter" id="typing-text"></span> 🌙
+    </h1>
+
+    <div class="hero-content">
+      
+      <div class="hero-image-wrapper">
+        <img src="../images/headshot.png" alt="Shivansh Gupta" class="hero-img">
+      </div>
+
+      <div class="hero-text">
+        <p>
+          I'm pursuing <span class="highlight-text">Artificial Intelligence for Business</span> at <span class="highlight-text">USC</span>.
+        </p>
+        <p>
+          I work at the <span class="highlight-text">intersection of Business and Technology</span>, translating technical capabilities into practical business value.
+        </p>
+        <p>
+          I am also a foodie, love to play pickleball, and enjoy nature photography.
+        </p>
+        <a href="#contact" class="connect-link">Let's connect! 🚀</a>
+      </div>
+
+    </div>
   </section>
 
   <section id="experience">
