@@ -14,24 +14,23 @@
 
   <style>
     :root {
-      /* NEW STYLE PALETTE */
-      --bg: #F2ECE4;          /* Base Light Cream */
-      --text-main: #062829;   /* Base Deep Teal */
+      /* PALETTE */
+      --bg: #F2ECE4;          
+      --text-main: #062829;   
+      --primary: #2E5252;     
+      --secondary: #D9B68B;   
+      --accent-red: #400101;  
+      --accent-peach: #F2E3D5;
       
-      --primary: #2E5252;     /* Medium Teal (Headers/Links) */
-      --secondary: #D9B68B;   /* Gold (Borders/Accents) */
-      --accent-red: #400101;  /* Deep Maroon (Buttons/Highlights) */
-      --accent-peach: #F2E3D5;/* Pale Peach (Subtle backgrounds) */
+      --surface: #ffffff;     
+      --text-muted: #2E5252;  
       
-      --surface: #ffffff;     /* White Cards */
-      --text-muted: #2E5252;  /* Using Teal as muted text for harmony */
-      
-      --border: #D9B68B;      /* Gold borders */
+      --border: #D9B68B;      
       
       --shadow: 0 10px 30px -10px rgba(6, 40, 41, 0.1);
       --shadow-hover: 0 15px 40px -10px rgba(6, 40, 41, 0.15);
       
-      --radius: 12px;         /* Slightly tighter corners for elegance */
+      --radius: 12px;         
       --max-width: 1100px;
     }
 
@@ -40,15 +39,13 @@
 
     body {
       margin: 0;
-      /* "Avenir Light" with fallbacks */
       font-family: 'Avenir', 'Lato', sans-serif;
-      font-weight: 300; /* Light weight */
+      font-weight: 300; 
       background-color: var(--bg);
       color: var(--text-main);
       line-height: 1.7;
     }
 
-    /* Headings in Playfair Display */
     h1, h2, h3, h4, .logo {
       font-family: 'Playfair Display', serif;
       margin: 0;
@@ -61,9 +58,9 @@
     /* --- NAVIGATION --- */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
-      background: rgba(242, 236, 228, 0.95); /* Matches --bg with transparency */
+      background: rgba(242, 236, 228, 0.95); 
       backdrop-filter: blur(10px);
-      z-index: 100; border-bottom: 1px solid rgba(217, 182, 139, 0.3); /* Low opacity gold */
+      z-index: 100; border-bottom: 1px solid rgba(217, 182, 139, 0.3); 
       padding: 16px 0;
     }
     .nav-container {
@@ -75,7 +72,7 @@
       letter-spacing: -0.5px;
       display: flex; align-items: center; gap: 6px; 
     }
-    .logo span { color: var(--accent-red); } /* Maroon Dot */
+    .logo span { color: var(--accent-red); } 
     
     .nav-links { display: flex; gap: 30px; align-items: center; }
     .nav-links a { 
@@ -101,19 +98,17 @@
     }
     .btn-connect:hover { background-color: #2E5252; transform: translateY(-2px); }
 
-    /* --- HERO LAYOUT --- */
+    /* --- HERO --- */
     .hero {
       min-height: 95vh;
       display: flex; flex-direction: column; justify-content: center; 
       padding: 120px 24px 60px; max-width: 1100px; margin: 0 auto;
     }
     .hero-title {
-      font-size: 64px; line-height: 1.1; font-weight: 400; /* Playfair looks good regular */
+      font-size: 64px; line-height: 1.1; font-weight: 400; 
       text-align: center; margin-bottom: 70px;
       color: var(--text-main);
     }
-    .hero-title i { font-style: italic; } /* For Playfair Italics if needed */
-    
     .typewriter { color: var(--accent-red); display: inline-block; font-style: italic; font-weight: 700; }
     
     .hero-content { display: flex; align-items: flex-start; gap: 60px; text-align: left; }
@@ -124,23 +119,21 @@
     
     .hero-image-wrapper {
       flex-shrink: 0; width: 280px; height: 360px; 
-      border-radius: 100px 100px 20px 20px; /* Arch shape for style */
+      border-radius: 100px 100px 20px 20px; 
       overflow: hidden;
       box-shadow: 15px 15px 0px var(--secondary); 
       border: 2px solid var(--border);
     }
     .hero-img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Learn More Menu (UPDATED for visibility) */
+    /* Learn More Menu */
     .learn-more-container { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 25px; }
     .learn-more-label { 
       font-family: 'Playfair Display', serif; 
       font-style: italic;
-      font-size: 20px; /* Increased size */
-      font-weight: 700; /* Bold */
-      color: var(--primary); /* Changed to darker teal for better contrast */
-      margin-bottom: 16px; 
-      display: block; 
+      font-size: 20px; font-weight: 700; 
+      color: var(--primary); 
+      margin-bottom: 16px; display: block; 
     }
     .learn-more-links { display: flex; gap: 25px; flex-wrap: wrap; }
     .learn-more-links a { 
@@ -178,7 +171,6 @@
     .section-title { font-size: 38px; margin-bottom: 30px; position: relative; display: inline-block; color: var(--accent-red); }
     .center-title { text-align: center; display: block; margin-bottom: 50px; }
     
-    /* Decorative underlining */
     .center-title::after { content: ''; position: absolute; width: 80px; height: 3px; background: var(--secondary); bottom: -10px; left: 50%; transform: translateX(-50%); }
     .section-title::after { content: ''; position: absolute; width: 60px; height: 3px; background: var(--secondary); bottom: -10px; left: 0; }
 
@@ -191,7 +183,6 @@
       display: flex; gap: 40px; align-items: flex-start;
     }
     .list-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--secondary); }
-    .company-logo { width: 90px; height: 90px; object-fit: contain; flex-shrink: 0; background: transparent; border: none; }
     .content-text { flex: 1; width: 100%; }
     
     .header-stack { display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; border-bottom: 1px solid var(--accent-peach); padding-bottom: 20px; }
@@ -201,9 +192,8 @@
     .location { font-size: 12px; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; }
     .role-title { font-size: 16px; font-weight: 700; color: var(--accent-red); margin: 0; }
     .date { font-size: 13px; font-weight: 400; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
-    li { margin-bottom: 12px; color: var(--primary); font-size: 16px; line-height: 1.8; }
 
-    /* --- CUSTOM SLIDESHOW FOR AYURMEALS (UPDATED COLORS) --- */
+    /* --- SLIDESHOW STYLES --- */
     .slideshow-container {
       position: relative;
       display: flex;
@@ -237,17 +227,15 @@
         width: auto; height: 100%; max-width: 100%;
         object-fit: contain; 
         border-radius: var(--radius);
-        /* No shadow on image itself for cleaner look in this theme */
     }
     
     .slide-text {
       flex: 2; 
-      font-size: 18px; /* Slightly larger for Avenir Light readability */
+      font-size: 18px; 
       color: var(--text-main);
       line-height: 1.9;
       padding-right: 10px;
-      font-family: 'Playfair Display', serif; /* Using Playfair for these impactful points */
-      /* Removed italics as requested */
+      font-family: 'Playfair Display', serif;
       font-style: normal; 
     }
 
@@ -330,7 +318,6 @@
       .form-grid { grid-template-columns: 1fr; }
       .header-row { flex-direction: column; gap: 6px; align-items: flex-start; }
       .list-item { flex-direction: column; gap: 20px; align-items: center; text-align: left; padding: 30px;}
-      .company-logo { width: 80px; height: 80px; }
       .nav-actions { margin-left: auto; }
       .nav-actions .icon-btn { display: none; }
       .skills-grid { grid-template-columns: 1fr 1fr; } 
@@ -394,12 +381,10 @@
 
   <section id="about-me">
     <h2 class="section-title center-title">About Me</h2>
-    
     <div class="about-content">
         <div class="about-image-wrapper">
            <img src="https://placehold.co/400x500?text=Place+Image+Here" alt="About Me Placeholder" class="about-img">
         </div>
-
         <div class="about-text">
             <p>
                 Hi, I’m <span class="highlight-text">Shivansh Gupta</span>. I’m studying <span class="highlight-text">AI for Business</span> at <span class="highlight-text">USC</span>.
@@ -426,7 +411,6 @@
     <div class="list-stack">
       
       <div class="list-item">
-        <img src="../images/nexedge.png" alt="Nexedge Capital" class="company-logo" style="width: 105px; height: 105px;">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -438,10 +422,18 @@
                 <div class="date">DEC 2025 - JAN 2026</div>
             </div>
           </div>
-          <ul>
-            <li>Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving 2,500+ hours per quarter in overall manual efforts.</li>
-            <li>Designed a SQL-based workflow to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</li>
-          </ul>
+          <div class="slideshow-container">
+            <button class="slide-nav-btn" onclick="moveSlide(this, -1)"><i data-feather="chevron-left"></i></button>
+            <div class="slide active">
+                <div class="slide-image-box"><img src="../images/nexedge1.png" class="slide-img-content"></div>
+                <div class="slide-text">Developed an automated system to extract and reconcile data from Statements of Account (SOAs) into Excel, enabling independent verification of reported returns and saving 2,500+ hours per quarter in overall manual efforts.</div>
+            </div>
+            <div class="slide">
+                <div class="slide-image-box"><img src="../images/nexedge2.png" class="slide-img-content"></div>
+                <div class="slide-text">Designed a SQL-based workflow to ingest daily Bloomberg data and integrate it with a Python financial model, improving overall data reliability, scalability, and long-term maintainability of financial analysis over time.</div>
+            </div>
+            <button class="slide-nav-btn" onclick="moveSlide(this, 1)"><i data-feather="chevron-right"></i></button>
+          </div>
         </div>
       </div>
 
@@ -457,53 +449,30 @@
                 <div class="date">JUN 2023 - JUN 2025</div>
             </div>
           </div>
-
           <div class="slideshow-container">
-            <button class="slide-nav-btn" onclick="changeSlide(-1)"><i data-feather="chevron-left"></i></button>
-            
+            <button class="slide-nav-btn" onclick="moveSlide(this, -1)"><i data-feather="chevron-left"></i></button>
             <div class="slide active">
-                <div class="slide-image-box">
-                    <img src="../images/ayurmeals1.png" alt="AyurMeals 1" class="slide-img-content">
-                </div>
-                <div class="slide-text">
-                    Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.
-                </div>
+                <div class="slide-image-box"><img src="../images/ayurmeals1.png" class="slide-img-content"></div>
+                <div class="slide-text">Founded Ayurveda-inspired meal subscription service, established in 3 corporate offices, to reduce the chronic conditions of corporate workers and promote holistic well-being based on ancient Indian Health Science.</div>
             </div>
-
             <div class="slide">
-                <div class="slide-image-box">
-                    <img src="../images/ayurmeals2.png" alt="AyurMeals 2 (Vertical)" class="slide-img-content">
-                </div>
-                <div class="slide-text">
-                    Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in Times of India (Nov ’24) for modernizing wisdom of Ayurveda.
-                </div>
+                <div class="slide-image-box"><img src="../images/ayurmeals2.png" class="slide-img-content"></div>
+                <div class="slide-text">Created a diagnostic tool for 200+ users to assess dietary needs based on Ayurvedic principles and provide each individual with a tailored diet plan; featured in Times of India (Nov ’24) for modernizing wisdom of Ayurveda.</div>
             </div>
-
             <div class="slide">
-                <div class="slide-image-box">
-                    <img src="../images/ayurmeals3.png" alt="AyurMeals 3" class="slide-img-content">
-                </div>
-                <div class="slide-text">
-                    Launched AyurMeals' inspired dish in 10 govt. schools in partnership with Akshay Patra, the largest midday meal provider in India. Endorsed by the Govt. of India for impacting public health and refining preventive healthcare.
-                </div>
+                <div class="slide-image-box"><img src="../images/ayurmeals3.png" class="slide-img-content"></div>
+                <div class="slide-text">Launched AyurMeals' inspired dish in 10 govt. schools in partnership with Akshay Patra, the largest midday meal provider in India. Endorsed by the Govt. of India for impacting public health and refining preventive healthcare.</div>
             </div>
-
             <div class="slide">
-                <div class="slide-image-box">
-                    <img src="../images/ayurmeals4.png" alt="AyurMeals 4 (Vertical)" class="slide-img-content">
-                </div>
-                <div class="slide-text">
-                    Shortlisted among 600 students from school for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge, for exceptional analytical skills and in-depth knowledge of the business.
-                </div>
+                <div class="slide-image-box"><img src="../images/ayurmeals4.png" class="slide-img-content"></div>
+                <div class="slide-text">Shortlisted among 600 students from school for the Thapar Entrepreneurship Academy; recognized by Namita Thapar, Shark Tank India judge, for exceptional analytical skills and in-depth knowledge of the business.</div>
             </div>
-
-            <button class="slide-nav-btn" onclick="changeSlide(1)"><i data-feather="chevron-right"></i></button>
+            <button class="slide-nav-btn" onclick="moveSlide(this, 1)"><i data-feather="chevron-right"></i></button>
           </div>
-          </div>
+        </div>
       </div>
 
       <div class="list-item">
-        <img src="../images/uch.png" alt="United Coffee House" class="company-logo">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -515,16 +484,26 @@
                 <div class="date">MAR 2024</div>
             </div>
           </div>
-          <ul>
-            <li>Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by 30% in Chandigarh.</li>
-            <li>Managed service for 80+ guests, gaining experience in operational execution, teamwork & customer experience.</li>
-            <li>Ideated and scripted 10+ reels, leading to a 20% increase in customer engagement on social media platforms.</li>
-          </ul>
+          <div class="slideshow-container">
+            <button class="slide-nav-btn" onclick="moveSlide(this, -1)"><i data-feather="chevron-left"></i></button>
+            <div class="slide active">
+                <div class="slide-image-box"><img src="../images/uch1.png" class="slide-img-content"></div>
+                <div class="slide-text">Shortlisted 100+ influencers to launch marketing campaigns, increasing customer footfall by 30% in Chandigarh.</div>
+            </div>
+            <div class="slide">
+                <div class="slide-image-box"><img src="../images/uch2.png" class="slide-img-content"></div>
+                <div class="slide-text">Managed service for 80+ guests, gaining experience in operational execution, teamwork & customer experience.</div>
+            </div>
+            <div class="slide">
+                <div class="slide-image-box"><img src="../images/uch3.png" class="slide-img-content"></div>
+                <div class="slide-text">Ideated and scripted 10+ reels, leading to a 20% increase in customer engagement on social media platforms.</div>
+            </div>
+            <button class="slide-nav-btn" onclick="moveSlide(this, 1)"><i data-feather="chevron-right"></i></button>
+          </div>
         </div>
       </div>
 
       <div class="list-item">
-         <img src="../images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
          <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -536,10 +515,18 @@
                 <div class="date">JUN 2023 - JUL 2023</div>
             </div>
           </div>
-          <ul>
-            <li>Expanded corporate client sales by 15% by acquiring new accounts through outreach and referral-based leads.</li>
-            <li>Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery & retaining key clients.</li>
-          </ul>
+          <div class="slideshow-container">
+            <button class="slide-nav-btn" onclick="moveSlide(this, -1)"><i data-feather="chevron-left"></i></button>
+            <div class="slide active">
+                <div class="slide-image-box"><img src="../images/moustaches1.png" class="slide-img-content"></div>
+                <div class="slide-text">Expanded corporate client sales by 15% by acquiring new accounts through outreach and referral-based leads.</div>
+            </div>
+            <div class="slide">
+                <div class="slide-image-box"><img src="../images/moustaches2.png" class="slide-img-content"></div>
+                <div class="slide-text">Resolved packaging flaw that caused frosting damage, ensuring product quality on delivery & retaining key clients.</div>
+            </div>
+            <button class="slide-nav-btn" onclick="moveSlide(this, 1)"><i data-feather="chevron-right"></i></button>
+          </div>
         </div>
       </div>
     </div>
@@ -550,7 +537,6 @@
     <div class="list-stack">
         
         <div class="list-item">
-            <img src="../images/maia.png" alt="MAIA" class="company-logo">
             <div class="content-text">
                 <div class="header-stack">
                     <div class="header-row">
@@ -562,15 +548,22 @@
                         <div class="date">SEPT 2025 - PRESENT</div>
                     </div>
                 </div>
-                <ul>
-                    <li>Collaborating to develop a backend system for a music-intelligence platform using FastAPI, Supabase, Redis.</li>
-                    <li>Developing a task-based recommender using Apple Music previews, Librosa analysis, and similarity modeling.</li>
-                </ul>
+                <div class="slideshow-container">
+                    <button class="slide-nav-btn" onclick="moveSlide(this, -1)"><i data-feather="chevron-left"></i></button>
+                    <div class="slide active">
+                        <div class="slide-image-box"><img src="../images/maia1.png" class="slide-img-content"></div>
+                        <div class="slide-text">Collaborating to develop a backend system for a music-intelligence platform using FastAPI, Supabase, Redis.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image-box"><img src="../images/maia2.png" class="slide-img-content"></div>
+                        <div class="slide-text">Developing a task-based recommender using Apple Music previews, Librosa analysis, and similarity modeling.</div>
+                    </div>
+                    <button class="slide-nav-btn" onclick="moveSlide(this, 1)"><i data-feather="chevron-right"></i></button>
+                </div>
             </div>
         </div>
 
         <div class="list-item">
-            <img src="../images/cloud.png" alt="USC Cloud" class="company-logo">
             <div class="content-text">
                 <div class="header-stack">
                     <div class="header-row">
@@ -582,10 +575,18 @@
                         <div class="date">SEPT 2025 - PRESENT</div>
                     </div>
                 </div>
-                <ul>
-                    <li>Pitched NFC chips & court experiences to the Crypto.com Arena VIP Tour team to raise revenue per guest by 50%.</li>
-                    <li>Proposed influencer tours, hero reels, and travel-platform partnerships to the Tour team, expected to 5x revenue.</li>
-                </ul>
+                <div class="slideshow-container">
+                    <button class="slide-nav-btn" onclick="moveSlide(this, -1)"><i data-feather="chevron-left"></i></button>
+                    <div class="slide active">
+                        <div class="slide-image-box"><img src="../images/cloud1.png" class="slide-img-content"></div>
+                        <div class="slide-text">Pitched NFC chips & court experiences to the Crypto.com Arena VIP Tour team to raise revenue per guest by 50%.</div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-image-box"><img src="../images/cloud2.png" class="slide-img-content"></div>
+                        <div class="slide-text">Proposed influencer tours, hero reels, and travel-platform partnerships to the Tour team, expected to 5x revenue.</div>
+                    </div>
+                    <button class="slide-nav-btn" onclick="moveSlide(this, 1)"><i data-feather="chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </div>
@@ -611,7 +612,6 @@
     <h2 class="section-title">Projects</h2>
     <div class="list-stack">
       <div class="project-card">
-        
         <div class="content-text" style="padding: 40px;">
           <div class="header-stack" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
               <div class="header-row">
@@ -622,18 +622,15 @@
           <ul style="margin-top:15px;">
             <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
           </ul>
-          
           <div style="margin-top: 25px;">
             <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; font-weight:700; color:var(--accent-red); font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">
               <i data-feather="external-link" style="width:16px; height:16px;"></i> View Full PDF
             </a>
           </div>
         </div>
-
         <div class="project-viewer">
             <iframe src="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/preview" allow="autoplay"></iframe>
         </div>
-
       </div>
     </div>
   </section>
@@ -644,7 +641,6 @@
       <p style="margin-bottom: 20px; color: var(--primary); text-align: center;">
         If you’d like to connect about consulting, analytics/automation work, or student org collaborations, send a quick note here.
       </p>
-
       <form id="contactForm" action="https://formspree.io/f/xpqqrook" method="POST">
         <div class="form-grid">
             <div class="form-group"><label>First Name</label><input type="text" name="firstName" autocomplete="given-name"></div>
@@ -680,6 +676,36 @@
       document.querySelector("#typing-text").textContent = letter;
       if (letter.length === currentText.length) { count++; index = 0; setTimeout(type, 2000); } else { setTimeout(type, 150); }
     }());
+    
+    /* --- NEW UNIVERSAL SLIDESHOW LOGIC --- */
+    function moveSlide(btn, step) {
+        // Find the specific container this button belongs to
+        const container = btn.closest('.slideshow-container');
+        const slides = container.querySelectorAll('.slide');
+        let activeIndex = -1;
+
+        // Find which slide is currently active in THIS container
+        slides.forEach((slide, index) => {
+            if (slide.classList.contains('active')) {
+                activeIndex = index;
+            }
+        });
+
+        // Hide current
+        if (activeIndex !== -1) {
+            slides[activeIndex].classList.remove('active');
+        }
+
+        // Calculate next index
+        let newIndex = activeIndex + step;
+        if (newIndex >= slides.length) newIndex = 0;
+        if (newIndex < 0) newIndex = slides.length - 1;
+
+        // Show new slide
+        slides[newIndex].classList.add('active');
+    }
+
+    /* Form Logic */
     const form = document.getElementById("contactForm");
     const successMsg = document.getElementById("formSuccess");
     form.addEventListener("submit", async function (e) {
@@ -689,25 +715,6 @@
         if (response.ok) { form.reset(); successMsg.style.display = "block"; } else { alert("Something went wrong. Please try again."); }
       } catch (error) { alert("Network error. Please try again later."); }
     });
-
-    /* --- SLIDESHOW LOGIC --- */
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    
-    function changeSlide(direction) {
-        // Hide current
-        slides[currentSlide].classList.remove('active');
-        
-        // Calculate next
-        currentSlide += direction;
-        
-        // Loop back if at end or beginning
-        if (currentSlide >= slides.length) { currentSlide = 0; }
-        if (currentSlide < 0) { currentSlide = slides.length - 1; }
-        
-        // Show new
-        slides[currentSlide].classList.add('active');
-    }
   </script>
 </body>
 </html>
