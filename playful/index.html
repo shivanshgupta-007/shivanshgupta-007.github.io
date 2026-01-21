@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shivansh Gupta | Portfolio</title>
+  <title>Shivansh Gupta | Experimental</title>
   <meta name="description" content="Shivansh Gupta — AI for Business @ USC." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,114 +127,59 @@
     }
 
     /* --- LIST LAYOUT (Experience & Leadership) --- */
-    .list-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 40px; 
-    }
+    .list-stack { display: flex; flex-direction: column; gap: 40px; }
 
     .list-item {
-      background: var(--surface);
-      padding: 35px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(0,0,0,0.03);
-      transition: 0.3s;
-      display: flex;
-      gap: 30px; 
-      align-items: flex-start;
+      background: var(--surface); padding: 35px; border-radius: var(--radius);
+      box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
+      display: flex; gap: 30px; align-items: flex-start;
     }
-
-    .list-item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(255, 153, 51, 0.2);
-    }
+    .list-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
 
     /* LOGO STYLE */
     .company-logo {
-      width: 85px; 
-      height: 85px; 
-      object-fit: contain; 
-      flex-shrink: 0;
-      background: transparent;
-      border: none;
+      width: 85px; height: 85px; object-fit: contain; flex-shrink: 0;
+      background: transparent; border: none;
     }
 
     .content-text { flex: 1; width: 100%; }
     
-    /* HEADER LAYOUT */
-    .header-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 4px; /* Space between rows */
-      margin-bottom: 18px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 18px;
-    }
-
-    .header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    }
+    /* HEADER LAYOUT: Two Rows */
+    .header-stack { display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px; border-bottom: 1px solid #eee; padding-bottom: 18px; }
+    .header-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
     /* ROW 1: Company + Location */
-    .company { 
-      font-size: 18px; 
-      font-weight: 700; 
-      color: #111; 
-      margin: 0;
-    }
-    .location {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    .company { font-size: 18px; font-weight: 700; color: #111; margin: 0; }
+    .location { font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
 
     /* ROW 2: Role + Date */
-    .role-title { 
-      font-size: 16px; 
-      font-weight: 600; 
-      color: var(--primary); /* Orange */
-      margin: 0;
-    }
-    .date { 
-      font-size: 13px; 
-      font-weight: 600; 
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    .role-title { font-size: 16px; font-weight: 600; color: var(--primary); margin: 0; }
+    .date { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
     
     ul { margin: 0; padding-left: 18px; }
     li { margin-bottom: 10px; color: #555; font-size: 15px; line-height: 1.7; }
 
-    /* --- PROJECTS --- */
+    /* --- PROJECTS & SLIDE VIEWER --- */
     .project-card {
       background: var(--surface); border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03);
-      width: 100%;
+      box-shadow: var(--shadow); transition: 0.3s; border: 1px solid rgba(0,0,0,0.03); width: 100%;
     }
     .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(255, 153, 51, 0.2); }
-    .card-link { text-decoration: none; color: inherit; display: block; height: 100%; padding: 30px; }
-    .project-card h3 { font-size: 18px; margin-bottom: 5px; color: var(--text-main); margin-top: 0;}
     .card-meta { font-size:13px; color:var(--text-muted); margin-bottom:15px; font-weight:600; }
 
-    /* --- SKILLS GRID --- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
+    /* NEW CSS FOR SLIDES */
+    .project-viewer {
+      position: relative; width: 100%; height: 0; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      background: #f0f0f0; border-bottom: 1px solid var(--border);
     }
+    .project-viewer iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+    /* --- SKILLS GRID --- */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
     .skill-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
       padding: 30px 20px; text-align: center; transition: 0.3s; box-shadow: var(--shadow);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 15px; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; height: 100%;
     }
     .skill-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: var(--shadow-hover); }
     .skill-card svg { color: var(--primary); width: 40px; height: 40px; }
@@ -268,7 +213,6 @@
       .hero h1 { font-size: 42px; }
       .nav-links { display: none; }
       .form-grid { grid-template-columns: 1fr; }
-      /* Mobile Stacking */
       .header-row { flex-direction: column; gap: 4px; align-items: flex-start; }
       .list-item { flex-direction: column; gap: 15px; align-items: center; text-align: left;}
       .company-logo { width: 70px; height: 70px; }
@@ -298,7 +242,7 @@
   </nav>
 
   <section class="hero" id="about">
-    <span class="hero-hello">Hello, I'm</span>
+    <span class="hero-hello">Experimental Build</span>
     <h1>Shivansh Gupta<br><span class="typewriter" id="typing-text"></span></h1>
     <p>
       Pursuing <b>Artificial Intelligence for Business</b> at <b>USC</b>.<br><br>
@@ -311,7 +255,7 @@
     <div class="list-stack">
       
       <div class="list-item">
-        <img src="images/nexedge.png" alt="Nexedge Capital" class="company-logo">
+        <img src="../images/nexedge.png" alt="Nexedge Capital" class="company-logo">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -331,7 +275,7 @@
       </div>
 
       <div class="list-item">
-        <img src="images/ayurmeals.png" alt="AyurMeals" class="company-logo">
+        <img src="../images/ayurmeals.png" alt="AyurMeals" class="company-logo">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -353,7 +297,7 @@
       </div>
 
       <div class="list-item">
-        <img src="images/uch.png" alt="United Coffee House" class="company-logo">
+        <img src="../images/uch.png" alt="United Coffee House" class="company-logo">
         <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -374,7 +318,7 @@
       </div>
 
       <div class="list-item">
-         <img src="images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
+         <img src="../images/moustaches.png" alt="Mr Moustaches Cakes" class="company-logo">
          <div class="content-text">
           <div class="header-stack">
             <div class="header-row">
@@ -400,7 +344,7 @@
     <div class="list-stack">
         
         <div class="list-item">
-            <img src="images/maia.png" alt="MAIA" class="company-logo">
+            <img src="../images/maia.png" alt="MAIA" class="company-logo">
             <div class="content-text">
                 <div class="header-stack">
                     <div class="header-row">
@@ -420,7 +364,7 @@
         </div>
 
         <div class="list-item">
-            <img src="images/cloud.png" alt="USC Cloud" class="company-logo">
+            <img src="../images/cloud.png" alt="USC Cloud" class="company-logo">
             <div class="content-text">
                 <div class="header-stack">
                     <div class="header-row">
@@ -461,19 +405,28 @@
     <h2 class="section-title">Projects</h2>
     <div class="list-stack">
       <div class="project-card">
-        <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" class="card-link">
-            <div class="content-text">
-              <div class="header-stack" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
-                  <div class="header-row">
-                      <div class="company">Research Paper on Food Choices in Delhi NCR Workforce <i data-feather="external-link" style="width:16px; height:16px; vertical-align:middle; color:var(--primary);"></i></div>
-                      <div class="date">MAR 2024 – DEC 2024</div>
-                  </div>
+        
+        <div class="project-viewer">
+            <iframe src="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/preview" allow="autoplay"></iframe>
+        </div>
+
+        <div class="content-text" style="padding: 30px;">
+          <div class="header-stack" style="border-bottom:none; margin-bottom:0; padding-bottom:0;">
+              <div class="header-row">
+                  <div class="company">Research Paper on Food Choices in Delhi NCR Workforce</div>
+                  <div class="date">MAR 2024 – DEC 2024</div>
               </div>
-              <ul style="margin-top:15px;">
-                <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association.</li>
-              </ul>
-            </div>
-        </a>
+          </div>
+          <ul style="margin-top:15px;">
+            <li>Surveyed 150+ professionals on health and nutrition preferences, incorporating key findings into AyurMeals’ meal design and personalization; presented findings at SigmaXi International Conference; awarded CREST Gold by the British Science Association for innovation, scientific rigor, and potential impact within the discipline.</li>
+          </ul>
+          
+          <div style="margin-top: 20px;">
+            <a href="https://drive.google.com/file/d/1MMTqLWi_PKWBFt4Ik6oP8P8hIljY-3UK/view?usp=sharing" target="_blank" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-weight:700; color:#ff9933;">
+              <i data-feather="external-link" style="width:16px; height:16px;"></i> View Full PDF
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
